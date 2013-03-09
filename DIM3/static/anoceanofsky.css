@@ -116,6 +116,7 @@ margin-top:10px;
 
 .contentBox .innerBox
 {
+text-align: center;
 position:relative;
 width:650px;
 height:auto;
@@ -144,15 +145,15 @@ margin-right:13px;
 }
 
 #footer {
-
-width: 670px;
+width: 100%;
 height:16px;
 background: url(imgs/footer.png) no-repeat;
 text-align:center;
 font-size:9px;
 font-family:Arial, Helvetica, sans-serif;
 color:#386172;
-padding-top:5px;
+padding-top: 5px;
+margin-top:30px;
 }
 
 #footer a
