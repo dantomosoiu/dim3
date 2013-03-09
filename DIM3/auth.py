@@ -19,6 +19,8 @@ class GoogleBackend:
             user = User.objects.get(email=google_email)
         except User.DoesNotExist:
             user = User.objects.create_user(google_email, google_email, ''.join(random.choice(string.printable) for x in range(random.randrange(8,16))))
+            user.first_name = google_firstname
+            user.last_name = google_lastname
             user.save()
             user = User.objects.get(username=google_email)
             return user
