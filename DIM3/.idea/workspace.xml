@@ -4,10 +4,13 @@
     <list default="true" id="9b34fd18-7fc9-443a-96cd-4e6695d54331" name="Default" comment="" />
     <ignored path="DIM3.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/urls.py" changelist="9b34fd18-7fc9-443a-96cd-4e6695d54331" time="1362854500429" ignored="false" />
-    <file path="/index.html" changelist="9b34fd18-7fc9-443a-96cd-4e6695d54331" time="1362854614817" ignored="false" />
     <file path="/anoceanofsky.css" changelist="9b34fd18-7fc9-443a-96cd-4e6695d54331" time="1362854878445" ignored="false" />
+<<<<<<< HEAD
+    <file path="/index.html" changelist="9b34fd18-7fc9-443a-96cd-4e6695d54331" time="1362854614817" ignored="false" />
+    <file path="/urls.py" changelist="9b34fd18-7fc9-443a-96cd-4e6695d54331" time="1362854500429" ignored="false" />
+=======
     <file path="/room.html" changelist="9b34fd18-7fc9-443a-96cd-4e6695d54331" time="1362855749346" ignored="false" />
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,42 +27,57 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BerserkerChat/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="42" selection-start="146" selection-end="146" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="register.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/BerserkerChat/register.html">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state line="7" column="24" selection-start="304" selection-end="304" vertical-scroll-proportion="-4.375">
+=======
             <state line="2" column="27" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BerserkerChat/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state line="12" column="38" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0">
+=======
+            <state line="23" column="0" selection-start="962" selection-end="962" vertical-scroll-proportion="0.0">
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/BerserkerChat/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="962" selection-end="962" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
+            <state line="12" column="45" selection-start="582" selection-end="582" vertical-scroll-proportion="-7.5">
+=======
       <file leaf-file-name="anoceanofsky.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/anoceanofsky.css">
           <provider selected="true" editor-type-id="text-editor">
             <state line="168" column="21" selection-start="2490" selection-end="2490" vertical-scroll-proportion="0.0">
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+      <file leaf-file-name="auth.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/auth.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="37" selection-start="703" selection-end="703" vertical-scroll-proportion="0.084880635">
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+=======
       <file leaf-file-name="room.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/chatrooms/room.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -92,6 +110,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="7" column="22" selection-start="301" selection-end="301" vertical-scroll-proportion="-4.375">
               <folding />
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
             </state>
           </provider>
         </entry>
@@ -99,7 +118,11 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DIM3/urls.py">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+            <state line="24" column="123" selection-start="661" selection-end="661" vertical-scroll-proportion="0.0">
+=======
             <state line="10" column="26" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
               <folding />
             </state>
           </provider>
@@ -130,23 +153,27 @@
         <option value="$PROJECT_DIR$/BerserkerChat/models.py" />
         <option value="$PROJECT_DIR$/BerserkerChat/views.py" />
         <option value="$PROJECT_DIR$/templates/BerserkerChat/register.html" />
-        <option value="$PROJECT_DIR$/DIM3/settings.py" />
         <option value="$PROJECT_DIR$/DIM3/auth.py" />
-        <option value="$PROJECT_DIR$/DIM3/urls.py" />
         <option value="$PROJECT_DIR$/BerserkerChat/urls.py" />
-        <option value="$PROJECT_DIR$/templates/BerserkerChat/index.html" />
         <option value="$PROJECT_DIR$/static/anoceanofsky.css" />
+<<<<<<< HEAD
+        <option value="$PROJECT_DIR$/DIM3/settings.py" />
+        <option value="$PROJECT_DIR$/DIM3/urls.py" />
+        <option value="$PROJECT_DIR$/templates/BerserkerChat/index.html" />
+        <option value="$PROJECT_DIR$/auth.py" />
+=======
         <option value="$PROJECT_DIR$/templates/chatrooms/base.html" />
         <option value="$PROJECT_DIR$/templates/chatrooms/guestname_form.html" />
         <option value="$PROJECT_DIR$/templates/chatrooms/room.html" />
         <option value="$PROJECT_DIR$/templates/chatrooms/rooms_list.html" />
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="width" value="1368" />
-    <option name="height" value="773" />
+    <option name="y" value="24" />
+    <option name="width" value="1366" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -239,38 +266,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DIM3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DIM3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="imgs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DIM3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DIM3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="DIM3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -296,7 +291,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RecentsManager">
@@ -341,8 +336,11 @@
       <option name="PATTERN" value="" />
       <option name="USE_PATTERN" value="false" />
       <option name="PUREUNITTEST" value="true" />
+<<<<<<< HEAD
+=======
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
       <method />
     </configuration>
     <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
@@ -467,18 +465,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="773" extended-state="0" />
+    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25835866" sideWeight="0.36451614" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25835866" sideWeight="0.3" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.49772036" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32419354" sideWeight="0.4969605" order="2" side_tool="false" content_ui="tabs" />
+=======
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2579666" sideWeight="0.35828024" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2579666" sideWeight="0.30414012" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903227" sideWeight="0.49772036" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32484075" sideWeight="0.4969605" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -522,9 +529,6 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
-    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
-    <option name="LIMIT_HISTORY" value="true" />
-    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
     <option name="LAST_COMMIT_MESSAGE" />
@@ -545,6 +549,39 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/DIM3/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="11" selection-start="819" selection-end="819" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DIM3/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="63" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/meta.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state line="276" column="8" selection-start="291" selection-end="8234" vertical-scroll-proportion="0.34768212" />
@@ -560,37 +597,9 @@
         <state line="22" column="36" selection-start="612" selection-end="612" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DIM3/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="0" selection-end="126" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="64" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BerserkerChat/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="38" selection-start="525" selection-end="525" vertical-scroll-proportion="0.038071066">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/auth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DIM3/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="26" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -602,22 +611,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/BerserkerChat/register.html">
+    <entry file="file://$PROJECT_DIR$/static/anoceanofsky.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="27" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
+        <state line="168" column="21" selection-start="2490" selection-end="2490" vertical-scroll-proportion="0.8646362">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DIM3/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="14" column="44" selection-start="608" selection-end="608" vertical-scroll-proportion="0.30456853">
+=======
+        <state line="10" column="0" selection-start="327" selection-end="327" vertical-scroll-proportion="0.0">
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DIM3/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="24" column="123" selection-start="661" selection-end="661" vertical-scroll-proportion="0.0">
+=======
+        <state line="10" column="26" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0">
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/BerserkerChat/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="962" selection-end="962" vertical-scroll-proportion="0.0">
+        <state line="12" column="45" selection-start="582" selection-end="582" vertical-scroll-proportion="-7.5">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/anoceanofsky.css">
+    <entry file="file://$PROJECT_DIR$/templates/BerserkerChat/register.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="7" column="24" selection-start="304" selection-end="304" vertical-scroll-proportion="-4.375">
+=======
+        <state line="2" column="27" selection-start="54" selection-end="54" vertical-scroll-proportion="0.0">
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BerserkerChat/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="12" column="38" selection-start="525" selection-end="525" vertical-scroll-proportion="0.0">
+=======
+        <state line="23" column="0" selection-start="962" selection-end="962" vertical-scroll-proportion="0.0">
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state line="16" column="37" selection-start="703" selection-end="703" vertical-scroll-proportion="0.084880635">
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+=======
         <state line="168" column="21" selection-start="2490" selection-end="2490" vertical-scroll-proportion="0.0">
           <folding />
         </state>
@@ -648,6 +707,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="22" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.8774929">
           <folding />
+>>>>>>> 9d587980d3923caf58c2fd3d817b3017fd5aeb65
         </state>
       </provider>
     </entry>

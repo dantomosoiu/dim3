@@ -11,7 +11,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^BerserkerChat/', include('BerserkerChat.urls')),
     url(r'^chat/', include('chatrooms.urls')),
-    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': ROOT_PATH + '/DIM3/beserkerchat/DIM3/static'}),
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': ROOT_PATH + '/DIM3/static'}),
     url(r'^google/login/$', 'django_openid_auth.views.login_begin', name='openid-login'),
     url(r'^google/login-complete/$', 'django_openid_auth.views.login_complete', name='openid-complete'),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/',}, name='logout'),

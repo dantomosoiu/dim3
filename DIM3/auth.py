@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from openid.consumer.consumer import SUCCESS
+import string, random
 from django.core.mail import mail_admins
 
 class GoogleBackend:
@@ -17,7 +18,7 @@ class GoogleBackend:
             # Make sure that the e-mail is unique.
             user = User.objects.get(email=google_email)
         except User.DoesNotExist:
-            user = User.objects.create_user(google_email, google_email, 'password')
+            user = User.objects.create_user(google_email, google_email, ''.join(random.choice(string.printable) for x in range(random.randrange(8,16))))
             user.save()
             user = User.objects.get(username=google_email)
             return user
