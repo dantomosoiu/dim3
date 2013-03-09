@@ -1,4 +1,7 @@
+import os
+
 # Django settings for DIM3 project.
+ROOT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -12,13 +15,14 @@ LOGIN_URL = '/login/'
 LOGOUT_URL = '/logout/'
 OPENID_SSO_SERVER_URL = 'https://www.google.com/accounts/o8/id'
 
-
 MANAGERS = ADMINS
+
+print ROOT_PATH
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/hector/Documents/DIM3/beserkerchat/DIM3/BerserkerChat/beserker.db',                      # Or path to database file if using sqlite3.
+        'NAME': ROOT_PATH + '/BerserkerChat/beserker.db',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
     }
 }
@@ -52,7 +56,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = '/home/hector/Documents/DIM3/beserkerchat/DIM3/BerserkerChat/media'
+MEDIA_ROOT = ROOT_PATH + '/BerserkerChat/media'
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -71,7 +75,7 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    '/home/hector/Documents/DIM3/beserkerchat/DIM3/static',
+    ROOT_PATH + '/static',
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -110,7 +114,7 @@ ROOT_URLCONF = 'DIM3.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'DIM3.wsgi.application'
 
-TEMPLATE_DIRS = ('/home/hector/Documents/DIM3/beserkerchat/DIM3/templates',)
+TEMPLATE_DIRS = (ROOT_PATH + '/templates',)
 
 INSTALLED_APPS = (
     'django.contrib.auth',
