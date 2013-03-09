@@ -14,16 +14,34 @@
     <div class="topNaviagationLink"><a href="/chat/room/room1">Chat</a></div>
     <div class="topNaviagationLink"><a href="/contact.html">Contact</a></div>
 </div>
-<div id="mainPicture">
-    <div class="picture">
-        <div id="headerTitle">Test Website</div>
-    </div>
-</div>
 <div class="contentBox">
     <div class="innerBox">
+        <div id="login-form-container">
+            <form id="login-form">
+                <input type="text" id="username" />
+                <br/>
+                <input type="password" id="password" />
+                <br/>
+                <input type="submit" value="Submit" id="submit-login">
+            </form>
+            <input type="button" id="google-login" value="Login with Google">
+        </div>
 
-        <a href="http://www.freedomain.co.nr/" target="_blank"><img src="{{ STATIC_URL }}imgs/blue.gif" width="88" height="31" border="0" alt="Free Domain Name - www.YOU.co.nr!"></a>
+        <div id="left-pane">
+            <input type="button" value="Create private chat"/>
+            <form id="create-public-chat-form">
+                <input type="text" id="create-public-chat-subject"/><br/><br/><br/><br/>
+                <input type="submit" value="Create private chat" id="create-public-chat-submit">
+            </form>
+        </div>
+    </div>
+</div>
 
-        <div id="footer"><a href="mailto:hectorgrebbell@googlemail.com"> hectorgrebbell@googlemail.com </a> Hector Grebbell</div></div>
+<div id="footer">
+    <a href="http://www.freedomain.co.nr/" target="_blank"><img src="{{ STATIC_URL }}imgs/blue.gif" width="88" height="31" border="0" alt="Free Domain Name - www.YOU.co.nr!"></a>
+    <br/>
+    <a href="mailto:teamlmember@googlemail.com"> Berserker Chat &#174; </a>
+</div>
+
 </body>
 </html>
