@@ -10,11 +10,13 @@
 
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    <script src="{{ STATIC_URL }}js/berserker.js"></script>
 
     <title>Hello</title>
 </head>
 
 <body>
+
 <div id="page">
     <div class="topNaviagationLink"><a href="/">Home</a></div>
     <div class="topNaviagationLink"><a href="/google/login/?next=/">Login</a></div>
@@ -27,8 +29,25 @@
         <div id="inner-header">
             Welcome, dude!
         </div>
-        <div id="room-container">
-            this be the place where room will show
+        <div id="tab-container">
+            <div id="tab-selector">
+                <ul>
+                    <li data-tab-selector='1' class="inactive">a button</li>
+                    <li data-tab-selector='2' class="inactive">another button</li>
+                    <li data-tab-selector='3' class="inactive">one more button</li>
+                </ul>
+            </div>
+            <div id="tab-list">
+                <div id="tab-1">
+                    <p>this be tab 1</p>
+                </div>
+                <div id="tab-2">
+                    <p>this be tab 2</p>
+                </div>
+                <div id="tab-3">
+                    <p>this be tab 3</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -39,6 +58,7 @@
         <form id="new-private-form" method="post" action="/makeroom/">
             {% csrf_token %}
             <input type="submit" value="Create private chat"/>
+            <input type="button" value="ajax test" onclick="Dajaxice.examples.getTabContent(my_callback)"/>
         </form>
         <hr/>
 

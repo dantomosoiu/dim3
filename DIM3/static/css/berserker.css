@@ -79,13 +79,41 @@ color:#386172;
     min-width: 400px;
 }
 
-#room-container{
+#tab-container{
     text-align: center;
     margin-top: 80px;
     margin-left: 235px;
     margin-right: 170px;
     min-width: 400px;
     min-height: 400px;
+}
+
+#tab-selector .inactive {
+    background-color: #b3b3b3;
+}
+
+#tab-selector .active {
+    background-color: #A9C8FA;
+}
+
+#tab-selector li {
+    display: inline-block;
+    width: 100px;
+}
+
+#tab-selector li:hover {
+    display: inline-block;
+    width: 100px;
+    background: #ccaaaa;
+}
+
+
+
+#tab-list > div {
+    width: 100%;
+    min-height: 400px;
+    background-color: #A9C8FA;
+    display: none;
 }
 
 #right-pane{
