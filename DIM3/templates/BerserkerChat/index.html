@@ -32,8 +32,11 @@
     <div id="left-pane">
         <p>Do you have someone with whom you need to talk in private or send a file? Just click below and pass him the
             link that appears in the browser!</p>
-        <input type="button" value="Create private chat"/>
-
+        {% if showroomurl %} <a href={{ room }}> {{ room }} </a> {% endif %}
+        <form id="new-private-form" method="post" action="/makeroom/">
+            {% csrf_token %}
+            <input type="submit" value="Create private chat"/>
+        </form>
         <hr/>
 
         <p>Want to talk to a complete stranger ?
@@ -45,7 +48,7 @@
             <textarea cols="20" id="create-public-chat-subject" rows="5" name="public-chat-subject">Looking for someone
                 interested in talking about cats!</textarea>
 
-            <input type="submit" value="Create private chat" id="create-public-chat-submit">
+            <input type="submit" value="Create public chat" id="create-public-chat-submit">
         </form>
     </div>
 

@@ -9,6 +9,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, render
 from DIM3.settings import MEDIA_ROOT
 from chatrooms.models import Room
+import string, random
 
 def index(request):
     context = RequestContext(request)
@@ -31,12 +32,12 @@ def index(request):
             invalidAttempt = True
             print  "Invalid Password or Username " + username + " Does not exist"
             #return render_to_response('BerserkerChat/index.html', {}, context)
-            return render(request, 'BerserkerChat/index.html', {'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
+            return render(request, 'BerserkerChat/index.html', {'showroomurl': False,'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
     elif request.user.is_authenticated():
         print "here"
         loggedin = True
 
-    return render(request, 'BerserkerChat/index.html', {'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
+    return render(request, 'BerserkerChat/index.html', {'showroomurl': False,'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
 
 
 def register(request):
@@ -63,7 +64,7 @@ def register(request):
         uform = UserForm()
         pform = UserProfileForm()
 
-    return render_to_response('BerserkerChat/register.html', {'uform': uform, 'pform': pform, 'registered': registered }, context)
+    return render_to_response('BerserkerChat/register.html', {'loggedin': request.user.is_authenticated(), 'uform': uform, 'pform': pform, 'registered': registered }, context)
 
 
 def save_file(file, path=''):
@@ -79,4 +80,7 @@ def user_logout(request):
     logout(request)
 
 def private_link(request):
-    r = Room()
+    rooms = Room.objects.all()
+    r = Room(name=request.user.username+" "+str(rooms.count()), slug=''.join(random.choice(string.ascii_lowercase) for x in range(2))+str(rooms.count()), allow_anonymous_access=True)
+    r.save()
+    return render(request, 'BerserkerChat/index.html', {'showroomurl': True,'room': "http://"+request.get_host()+"/room/"+r.slug, 'loggedin': request.user.is_authenticated(), 'invalidAttempt': False })
