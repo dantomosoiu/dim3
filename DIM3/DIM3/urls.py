@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('BerserkerChat.urls')),
     url(r'^', include('chatrooms.urls')),
+    url(r'^chat/', include('chatrooms.urls')),
 )
 
 urlpatterns += staticfiles_urlpatterns()

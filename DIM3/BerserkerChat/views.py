@@ -8,6 +8,7 @@ from BerserkerChat.models import UserForm, UserProfileForm, loginForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, render
 from DIM3.settings import MEDIA_ROOT
+from chatrooms.models import Room
 
 def index(request):
     context = RequestContext(request)
@@ -78,4 +79,4 @@ def user_logout(request):
     logout(request)
 
 def private_link(request):
-    
+    r = Room()
