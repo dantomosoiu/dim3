@@ -8,6 +8,10 @@ ROOT_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir))
 from django.contrib import admin
 admin.autodiscover()
 
+# For dajaxice
+from dajaxice.core import dajaxice_autodiscover, dajaxice_config
+dajaxice_autodiscover()
+
 urlpatterns = patterns('',
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': ROOT_PATH + '/DIM3/static'}),
     url(r'^google/login/$', 'django_openid_auth.views.login_begin', name='openid-login'),
@@ -17,6 +21,7 @@ urlpatterns = patterns('',
     url(r'^', include('BerserkerChat.urls')),
     url(r'^', include('chatrooms.urls')),
     url(r'^chat/', include('chatrooms.urls')),
+    url(dajaxice_config.dajaxice_url, include('dajaxice.urls')),
 )
 
 urlpatterns += staticfiles_urlpatterns()
