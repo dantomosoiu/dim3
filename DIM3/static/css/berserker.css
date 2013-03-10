@@ -58,41 +58,64 @@ color:#386172;
     margin: 0 auto;
     float:left;
     width: 100%;
+    text-align: center;
 }
 
 #left-pane{
-    padding: 5px;
-    width: 200px;
+    padding: 11px;
+    width: 210px;
     float: left;
     margin-left: -100%;
 }
 
+#left-pane input{
+    text-align: center;
+}
+
+#inner-header{
+    text-align: center;
+    margin-left: 235px;
+    margin-right: 170px;
+    min-width: 400px;
+}
+
 #room-container{
-    margin-top: 100px;
-    margin-left: 220px;
+    text-align: center;
+    margin-top: 80px;
+    margin-left: 235px;
     margin-right: 170px;
     min-width: 400px;
     min-height: 400px;
-    background-color: #386172;
 }
 
 #right-pane{
     padding-top: 13px;
     width: 140px;
     margin-left: -150px;
-    text-align: right;
+    text-align: center;
     float: left;
 }
 
 #right-pane #login-form{
     width: 100%;
     text-align: center;
-    margin: -2px;
+    margin: 0px;
     padding-right: 2px;
 }
 
 #login-form input{
     width: 90%;
+}
+
+#right-pane-account-holder{
+    width: 120px;
+    text-align: center;
+    margin: 0px 14px;
+}
+
+#sign-out-button {
+    width:120px;
+    text-align: center;
 }
 
 #right-pane #username{
@@ -103,17 +126,19 @@ color:#386172;
 }
 #right-pane #submit-login{
     width: 100%;
+    text-align: center;
 }
 #right-pane #google-login{
     margin-top: 8px;
 }
 
 #left-pane input{
-
+    width: 100%;
 }
 
 #create-public-chat-subject{
-
+    width: 93%;
+    margin: 0px 0px 8px 0px;
 }
 
 #left-pane hr{
@@ -124,7 +149,9 @@ color:#386172;
     margin-top: 10px;
 }
 
-
+#left-pane p {
+    margin: 3px;
+}
 
 .topNaviagationLink a:hover
 {
@@ -180,7 +207,7 @@ margin-right:13px;
 
 #ad-container {
     margin-top: 10px;
-
+    width: 120px;
 
 }
 
@@ -190,6 +217,8 @@ margin-right:13px;
     font-size: 9px;
     font-family: Arial, Helvetica, sans-serif;
     color: #386172;
+    bottom: 0px;
+    position: absolute;
 }
 
 #footer a
