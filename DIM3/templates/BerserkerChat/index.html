@@ -24,6 +24,9 @@
 </div>
 <div class="contentBox">
     <div class="innerBox">
+        <div id="inner-header">
+            Welcome, dude!
+        </div>
         <div id="room-container">
             this be the place where room will show
         </div>
@@ -45,8 +48,7 @@
 
         <form id="create-public-chat-form">
             <p>Enter a topic here: (optional)</p>
-            <textarea cols="20" id="create-public-chat-subject" rows="5" name="public-chat-subject">Looking for someone
-                interested in talking about cats!</textarea>
+            <textarea cols="10" id="create-public-chat-subject" rows="4" name="public-chat-subject">Looking for someone interested in talking about cats!</textarea>
 
             <input type="submit" value="Create public chat" id="create-public-chat-submit">
         </form>
@@ -55,11 +57,11 @@
 
     <div id="right-pane">
         {% if loggedin %}
-            <A href="/BerserkerChat/">My Account</A><br/>
-            <A href="/logout">Log Out</A>
+            <div id="right-pane-account-holder"><p>You are signed in as <a href="/BerserkerChat/MyAccount"> HECTOR FIX THIS </a> </p></div>
+            <a href="/logout"> <input type="button" value="Sign Out" id="sign-out-button"> </a>
         {% else %}
             {% if invalidAttempt %} Invalid Username or Password<br/>{% endif %}
-            <form id="login-form" method="post" action="/BerserkerChat/">
+            <form id="login-form" method="post" action="/">
                 {% csrf_token %}
                 <input type="text" name="username"/>
                 <br/>
