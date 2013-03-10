@@ -1,5 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+{% load dajaxice_templatetags %}
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -13,6 +15,7 @@
     <script src="{{ STATIC_URL }}js/berserker.js"></script>
 
     <title>Hello</title>
+    {% dajaxice_js_import %}
 </head>
 
 <body>
@@ -58,7 +61,7 @@
         <form id="new-private-form" method="post" action="/makeroom/">
             {% csrf_token %}
             <input type="submit" value="Create private chat"/>
-            <input type="button" value="ajax test" onclick="Dajaxice.examples.getTabContent(my_callback)"/>
+            <input type="button" value="ajax test" onclick="Dajaxice.BerserkerChat.getTabContent(my_callback)"/>
         </form>
         <hr/>
 
@@ -77,7 +80,7 @@
 
     <div id="right-pane">
         {% if loggedin %}
-            <div id="right-pane-account-holder"><p>You are signed in as <a href="/BerserkerChat/MyAccount"> HECTOR FIX THIS </a> </p></div>
+            <div id="right-pane-account-holder"><p>You are signed in as <a href="/BerserkerChat/MyAccount"> {{user.username}} </a> </p></div>
             <a href="/logout"> <input type="button" value="Sign Out" id="sign-out-button"> </a>
         {% else %}
             {% if invalidAttempt %} Invalid Username or Password<br/>{% endif %}
