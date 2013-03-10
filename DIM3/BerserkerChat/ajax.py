@@ -41,3 +41,10 @@ def getPrivateRoom(request, data):
 
 
     return simplejson.dumps({'name': "Private(" + r.slug + ")", 'tab':page})
+
+def getTab(request, data):
+    r = Room.objects.get_or_create(slug=data)
+    c = RequestContext(request, {'user':request.user,'room': r })
+    t = loader.get_template('chatrooms/room.html')
+    page = t.render(c)
+    return simplejson.dumps({'name': "Public(" + r.slug + ")", 'tab':page})
