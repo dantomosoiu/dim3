@@ -42,3 +42,31 @@ var setTabSelectorClick = function(){
 function my_callback(data){
     addTab(data.name, data.tab);
 }
+
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+function createPrivateChat(){
+    var name = "";
+
+    if( $("#left-pane").attr("data-name") == "" ) {
+        name = prompt("Please enter an username");
+    }
+    Dajaxice.BerserkerChat.getPrivateRoom(my_callback, {'data': name});
+}
+
+var csrftoken = getCookie('csrftoken');

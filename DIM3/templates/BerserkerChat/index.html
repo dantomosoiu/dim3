@@ -9,10 +9,13 @@
     <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
 
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/berserker.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/room.css">
 
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-    <script src="{{ STATIC_URL }}js/berserker.js"></script>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/berserker.js"></script>
+
 
     <title>Welcome to BerserkerChat</title>
     {% dajaxice_js_import %}
@@ -58,14 +61,16 @@
         </div>
     </div>
 
-    <div id="left-pane">
+    {% if user.is_authenticated %}
+    <div id="left-pane" data-name='{{ user.username }}'>
+    {% else %}
+    <div id="left-pane" data-name=''>
+    {% endif %}
         <p>Do you have someone with whom you need to talk in private or send a file? Just click below and pass him the
             link that appears in the browser!</p>
         {% if showroomurl %} <a href={{ room }}> {{ room }} </a> {% endif %}
-        <form id="new-private-form" method="post" action="/makeroom/">
-            {% csrf_token %}
-            <input type="submit" value="Create private chat"/>
-            <input type="button" value="Create private chat" onclick="Dajaxice.BerserkerChat.getTabContent(my_callback)"/>
+        <form id="new-private-form">
+            <input type="button" value="Create private chat" onclick="createPrivateChat()"/>
         </form>
         <hr/>
 

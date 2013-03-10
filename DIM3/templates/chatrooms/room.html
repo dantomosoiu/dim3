@@ -1,26 +1,21 @@
-{% extends "chatrooms/base.html" %}
 
-{% block extra_headers %}
-    <!-- <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}/css/room_page.css"> -->
-    <title>Berserker Chat: Chat Room {{ room.id }}</title>
     <script type="text/javascript">
         getContext = function(){
             return {
                 "username": "{{ user.username }}",
-                "room_id": {{ room.id }},
+                "room_id": {{ room.id }}
             }
         }
     </script>
+
+
     <script type="text/javascript" src="{{ STATIC_URL }}/js/room.js"></script>
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/room.css">
-{% endblock %}
 
-
-{% block content %}
     <div id="chatContent">
         <div id="chat">
             <div id="chatText"></div>
             <div id="chatInput">
+                {% csrf_token %}
                 <input id="chatSendText" name="chatSendText" type="text" >
                 <input id="chatSendButton" type="button" value="Send">
             </div>
@@ -31,4 +26,3 @@
             </ol>
         </div>
     </div>
-{% endblock %}
