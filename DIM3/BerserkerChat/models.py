@@ -22,3 +22,8 @@ class UserProfileForm(ModelForm):
     class Meta:
         fields=['website','picture']
         model = UserProfile
+
+class loginForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ["username", "password"]

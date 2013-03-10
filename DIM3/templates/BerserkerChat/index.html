@@ -39,7 +39,8 @@
 
         <div id="login-form-container">
             {% if loggedin %}
-                <A href="/BerserkerChat/">My Account</A>
+                <A href="/BerserkerChat/">My Account</A><br/>
+                <A href="/logout">Log Out</A>
             {% else %}
                 <form id="login-form" method="post" action="/BerserkerChat/">
                     {% csrf_token %}

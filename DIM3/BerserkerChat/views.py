@@ -1,21 +1,39 @@
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from BerserkerChat.models import UserProfile
-from BerserkerChat.models import UserForm, UserProfileForm
-from django.http import HttpResponse
-from django.shortcuts import render_to_response
+from BerserkerChat.models import UserForm, UserProfileForm, loginForm
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render_to_response, render
 from DIM3.settings import MEDIA_ROOT
 
 def index(request):
-    # select the appropriate template to use
-    template = loader.get_template('BerserkerChat/index.html')
-    # create and define the context. We don't have any context at the moment
-    # but later on we will be putting data in the context which the template engine
-    # will use when it renders the template into a page.
-    context = RequestContext(request, {})
-    # render the template using the provided context and return as http response.
-    return HttpResponse(template.render(context))
+    context = RequestContext(request)
+    loggedin = False
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+                # Redirect to index page.
+                return HttpResponseRedirect("/")
+            else:
+                # Return a 'disabled account' error message
+                return HttpResponse("You're account is disabled.")
+        else:
+            # Return an 'invalid login' error message.
+            print  "Invalid Password or Username " + username + " Does not exist"
+            return render_to_response('login.html', {}, context)
+    elif request.user.is_authenticated():
+        print "here"
+        loggedin = True
+
+    return render(request, 'BerserkerChat/index.html', {'loggedin': loggedin })
+
 
 def register(request):
     context = RequestContext(request)
@@ -50,3 +68,8 @@ def save_file(file, path=''):
     for chunk in file.chunks():
         fd.write(chunk)
     fd.close()
+
+@login_required
+def user_logout(request):
+    context=RequestContext(request)
+    logout(request)
