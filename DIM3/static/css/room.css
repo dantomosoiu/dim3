@@ -1,5 +1,5 @@
 #chatContent{
-    background-color: #EDF0F0;
+    background-color: #E9FFFF;
     font-family: Helvetica, Arial, "MS Trebuchet", sans-serif;
 }
 
@@ -7,7 +7,7 @@
     width: 80%;
     display: inline;
     float: left;
-    background-color: #C9C9C9;
+    background-color: #FFFFFF;
     border-style: outset;
 }
 
@@ -44,6 +44,7 @@
     height: 32px;
     width: 20%;
     font-size: 18px;
+    background-color: #888888;
     font-family: Helvetica, Arial, "MS Trebuchet", sans-serif;
     -webkit-box-shadow: 2px 2px 1px #888888; /* Safari and Chrome */
     box-shadow: 2px 2px 1px #888888;
@@ -56,6 +57,7 @@
     height: 32px;
     width: 20%;
     font-size: 18px;
+    background-color: #888888;
     font-family: Helvetica, Arial, "MS Trebuchet", sans-serif;
     box-shadow: inset 2px 2px 1px #888888;
 }

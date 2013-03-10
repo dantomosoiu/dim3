@@ -7,6 +7,7 @@ import random, string
 from chatrooms.utils.decorators import room_check_access
 from chatrooms import views
 
+
 @dajaxice_register
 def getTabContent(request):
     rooms = Room.objects.all()
