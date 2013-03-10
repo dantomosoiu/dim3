@@ -1,4 +1,4 @@
-from django.template import Context, loader
+from django.template import Context, loader, RequestContext
 from django.utils import simplejson
 from dajaxice.decorators import dajaxice_register
 from chatrooms.models import Room
@@ -17,7 +17,7 @@ def getTabContent(request):
 
     r = Room.objects.get(slug=new_slug)
     t = loader.get_template('chatrooms/room.html')
-    c = Context({'user':request.user,'room': r })
+    c = RequestContext(request, {'user':request.user,'room': r })
     page = t.render(c)
 
 
