@@ -76,3 +76,6 @@ def save_file(file, path=''):
 def user_logout(request):
     context=RequestContext(request)
     logout(request)
+
+def private_link(request):
+    
