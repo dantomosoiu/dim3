@@ -14,7 +14,7 @@
     <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
     <script src="{{ STATIC_URL }}js/berserker.js"></script>
 
-    <title>Hello</title>
+    <title>Welcome to BerserkerChat</title>
     {% dajaxice_js_import %}
 </head>
 
@@ -86,9 +86,9 @@
             {% if invalidAttempt %} Invalid Username or Password<br/>{% endif %}
             <form id="login-form" method="post" action="/">
                 {% csrf_token %}
-                <input type="text" name="username"/>
+                <input type="text" placeholder="Username" name="username"/>
                 <br/>
-                <input type="password" name="password"/>
+                <input type="password" placeholder="Password" name="password"/>
                 <br/>
                 <input type="submit" value="Submit" id="submit-login">
 
