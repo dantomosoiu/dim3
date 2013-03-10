@@ -1,11 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
 
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/berserker.css" />
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/berserker.css"/>
 
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
@@ -29,22 +30,24 @@
     </div>
 
     <div id="left-pane">
-        <p>Do you have someone with whom you need to talk in private  or send a file? Just click below and pass him the link that appears in the browser!</p>
+        <p>Do you have someone with whom you need to talk in private or send a file? Just click below and pass him the
+            link that appears in the browser!</p>
         <input type="button" value="Create private chat"/>
 
         <hr/>
 
         <p>Want to talk to a complete stranger ?
-            Choose to create or join a random chat room and we'll quickly pair you with a partner. If you want to talk about a certain subject, we'll do our best to find you a match!</p>
+            Choose to create or join a random chat room and we'll quickly pair you with a partner. If you want to talk
+            about a certain subject, we'll do our best to find you a match!</p>
+
         <form id="create-public-chat-form">
             <p>Enter a topic here: (optional)</p>
-            <textarea cols="22" id="create-public-chat-subject" rows="5" name="public-chat-subject">Looking for someone interested in talking about cats!</textarea>
+            <textarea cols="20" id="create-public-chat-subject" rows="5" name="public-chat-subject">Looking for someone
+                interested in talking about cats!</textarea>
 
             <input type="submit" value="Create private chat" id="create-public-chat-submit">
         </form>
     </div>
-
-
 
 
     <div id="right-pane">
@@ -52,51 +55,52 @@
             <A href="/BerserkerChat/">My Account</A><br/>
             <A href="/logout">Log Out</A>
         {% else %}
-        {% if invalidAttempt %} Invalid Username or Password<br/>{% endif %}
+            {% if invalidAttempt %} Invalid Username or Password<br/>{% endif %}
             <form id="login-form" method="post" action="/BerserkerChat/">
                 {% csrf_token %}
-                <input type="text" name="username" />
+                <input type="text" name="username"/>
                 <br/>
-                <input type="password" name="password" />
+                <input type="password" name="password"/>
                 <br/>
                 <input type="submit" value="Submit" id="submit-login">
             </form>
             <a href="/google/login">
-            <img src="/static/imgs/google.png" alt="Log In With Google" width=82%></a>
+                <img src="/static/imgs/google.png" alt="Log In With Google" width=82%></a>
         {% endif %}
 
 
-    <div id="ad-container">
-        <script type="text/javascript">
-            sa_client = "cb5b87c76c7debf5d89778c848540e04";
-            sa_code = "c51b8f50a89033f6cf2ed62567e50659";
-            sa_protocol = ("https:"==document.location.protocol)?"https":"http";
-            sa_pline = "0";
-            sa_maxads = "4";
-            sa_bgcolor = "FFFFFF";
-            sa_bordercolor = "DDDDFF";
-            sa_superbordercolor = "DDDDFF";
-            sa_linkcolor = "000080";
-            sa_desccolor = "000000";
-            sa_urlcolor = "008000";
-            sa_b = "0";
-            sa_format = "column_120x600";
-            sa_width = "120";
-            sa_height = "600";
-            sa_location = "0";
-            sa_radius = "4";
-            sa_borderwidth = "1";
-            sa_font = "0";
-            document.write(unescape("%3cscript type='text/javascript' src='"+sa_protocol+"://sa.entireweb.com/sense.js'%3e%3c/script%3e"));
-        </script>
-
-    </div>
+        <div id="ad-container">
+            <script type="text/javascript">
+                sa_client = "cb5b87c76c7debf5d89778c848540e04";
+                sa_code = "c51b8f50a89033f6cf2ed62567e50659";
+                sa_protocol = ("https:" == document.location.protocol) ? "https" : "http";
+                sa_pline = "0";
+                sa_maxads = "2";
+                sa_bgcolor = "FFFFFF";
+                sa_bordercolor = "DDDDFF";
+                sa_superbordercolor = "DDDDFF";
+                sa_linkcolor = "000080";
+                sa_desccolor = "000000";
+                sa_urlcolor = "008000";
+                sa_b = "0";
+                sa_format = "column_120x240";
+                sa_width = "120";
+                sa_height = "240";
+                sa_location = "0";
+                sa_radius = "4";
+                sa_borderwidth = "1";
+                sa_font = "0";
+                document.write(unescape("%3cscript type='text/javascript' src='" + sa_protocol + "://sa.entireweb.com/sense.js'%3e%3c/script%3e"));
+            </script>
+        </div>
 
     </div>
 </div>
 
 <div id="footer">
-    <a href="http://www.freedomain.co.nr/" target="_blank"><img src="{{ STATIC_URL }}imgs/blue.gif" width="88" height="31" border="0" alt="Free Domain Name - www.YOU.co.nr!"></a>
+    <a href="http://www.freedomain.co.nr/" target="_blank"><img src="{{ STATIC_URL }}imgs/blue.gif" width="88"
+                                                                height="31" border="0"
+                                                                alt="Free Domain Name - www.YOU.co.nr!"></a>
     <br/>
     <a href="mailto:teamlmember@googlemail.com"> Berserker Chat &#174; </a>
 </div>
