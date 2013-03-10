@@ -3,4 +3,4 @@ from dajaxice.decorators import dajaxice_register
 
 @dajaxice_register
 def getTabContent(request):
-    return simplejson.dumps({'message':'Hello from Python!'})
+    return simplejson.dumps({'tabContent':'This text was passed from ajax.py'})
