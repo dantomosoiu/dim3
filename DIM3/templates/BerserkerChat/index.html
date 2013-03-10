@@ -45,6 +45,7 @@
             <A href="/BerserkerChat/">My Account</A><br/>
             <A href="/logout">Log Out</A>
         {% else %}
+        {% if invalidAttempt %} Invalid Username or Password<br/>{% endif %}
             <form id="login-form" method="post" action="/BerserkerChat/">
                 {% csrf_token %}
                 <input type="text" name="username" />
@@ -53,7 +54,8 @@
                 <br/>
                 <input type="submit" value="Submit" id="submit-login">
             </form>
-            <input type="button" id="google-login" value="Login with Google">
+            <a href="/google/login">
+            <img src="/static/imgs/google.png" alt="Log In With Google" width=82%></a>
         {% endif %}
 
 

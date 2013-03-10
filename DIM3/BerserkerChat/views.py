@@ -12,6 +12,7 @@ from DIM3.settings import MEDIA_ROOT
 def index(request):
     context = RequestContext(request)
     loggedin = False
+    invalidAttempt = False
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -26,13 +27,15 @@ def index(request):
                 return HttpResponse("You're account is disabled.")
         else:
             # Return an 'invalid login' error message.
+            invalidAttempt = True
             print  "Invalid Password or Username " + username + " Does not exist"
-            return render_to_response('login.html', {}, context)
+            #return render_to_response('BerserkerChat/index.html', {}, context)
+            return render(request, 'BerserkerChat/index.html', {'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
     elif request.user.is_authenticated():
         print "here"
         loggedin = True
 
-    return render(request, 'BerserkerChat/index.html', {'loggedin': loggedin })
+    return render(request, 'BerserkerChat/index.html', {'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
 
 
 def register(request):
