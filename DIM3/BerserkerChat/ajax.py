@@ -13,7 +13,7 @@ def getPrivateRoom(request, data):
 
 
 
-    request.session['guest_name'] = data
+    if (data != "") request.session['guest_name'] = data
 
     rooms = Room.objects.all()
     new_slug = ''.join(random.choice(string.ascii_lowercase) for x in range(2))+str(rooms.count())
@@ -42,9 +42,12 @@ def getPrivateRoom(request, data):
 
     return simplejson.dumps({'name': "Private(" + r.slug + ")", 'tab':page})
 
-def getTab(request, data):
-    r = Room.objects.get_or_create(slug=data)
+def getRoom(request, data):
+    if (data.name != ""):
+        request.session['guest_name'] = data.name
+    roomname=data.slug
+    r = Room.objects.get_or_create(name=roomname, slug=roomname, allow_anonymous_access=True)
     c = RequestContext(request, {'user':request.user,'room': r })
     t = loader.get_template('chatrooms/room.html')
     page = t.render(c)
-    return simplejson.dumps({'name': "Public(" + r.slug + ")", 'tab':page})
+    return simplejson.dumps({'name': "Public(" + roomname + ")", 'tab':page})
