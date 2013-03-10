@@ -40,5 +40,6 @@ var setTabSelectorClick = function(){
 }
 
 function my_callback(data){
-    alert(data.message);
+    alert("it worked!");
+    addTab("it worked!", data);
 }
