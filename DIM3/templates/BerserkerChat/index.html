@@ -16,43 +16,51 @@
 </div>
 <div class="contentBox">
     <div class="innerBox">
-        <div id="left-pane">
-            <p>Do you have someone with whom you need to talk in private  or send a file? Just click below and pass him the link that appears in the browser!</p>
-            <input type="button" value="Create private chat"/>
-
-            <hr/>
-
-            <p>Want to talk to a complete stranger ?
-                Choose to create or join a random chat room and we'll quickly pair you with a partner. If you want to talk about a certain subject, we'll do our best to find you a match!</p>
-            <form id="create-public-chat-form">
-                <p>Enter a topic here: (optional)</p>
-                <textarea cols="22" id="create-public-chat-subject" rows="5" name="public-chat-subject">Looking for someone interested in talking about cats!</textarea>
-
-                <input type="submit" value="Create private chat" id="create-public-chat-submit">
-            </form>
-        </div>
-
         <div id="room-container">
             this be the place where room will show
         </div>
+    </div>
+
+    <div id="left-pane">
+        <p>Do you have someone with whom you need to talk in private  or send a file? Just click below and pass him the link that appears in the browser!</p>
+        <input type="button" value="Create private chat"/>
+
+        <hr/>
+
+        <p>Want to talk to a complete stranger ?
+            Choose to create or join a random chat room and we'll quickly pair you with a partner. If you want to talk about a certain subject, we'll do our best to find you a match!</p>
+        <form id="create-public-chat-form">
+            <p>Enter a topic here: (optional)</p>
+            <textarea cols="22" id="create-public-chat-subject" rows="5" name="public-chat-subject">Looking for someone interested in talking about cats!</textarea>
+
+            <input type="submit" value="Create private chat" id="create-public-chat-submit">
+        </form>
+    </div>
 
 
-        <div id="login-form-container">
-            {% if loggedin %}
-                <A href="/BerserkerChat/">My Account</A><br/>
-                <A href="/logout">Log Out</A>
-            {% else %}
-                <form id="login-form" method="post" action="/BerserkerChat/">
-                    {% csrf_token %}
-                    <input type="text" name="username" />
-                    <br/>
-                    <input type="password" name="password" />
-                    <br/>
-                    <input type="submit" value="Submit" id="submit-login">
-                </form>
-                <input type="button" id="google-login" value="Login with Google">
-            {% endif %}
-        </div>
+
+
+    <div id="right-pane">
+        {% if loggedin %}
+            <A href="/BerserkerChat/">My Account</A><br/>
+            <A href="/logout">Log Out</A>
+        {% else %}
+            <form id="login-form" method="post" action="/BerserkerChat/">
+                {% csrf_token %}
+                <input type="text" name="username" />
+                <br/>
+                <input type="password" name="password" />
+                <br/>
+                <input type="submit" value="Submit" id="submit-login">
+            </form>
+            <input type="button" id="google-login" value="Login with Google">
+        {% endif %}
+
+
+    <div id="ad-container">
+        here be ads
+    </div>
+
     </div>
 </div>
 
