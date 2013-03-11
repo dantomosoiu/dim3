@@ -16,29 +16,46 @@
 \def\newblock{\hskip .11em plus .33em minus .07em}
 
 \conferenceinfo{DIM3} {2013, Glasgow, UK} 
-\CopyrightYear{2010}
+\CopyrightYear{2013}
 \clubpenalty=10000
 \widowpenalty = 10000
 
-\title{{Berserker Chat Design and Implementation Report}}
+\title{{Berserker Chat: Specification, Design and Implementation Report}}
 
 \numberofauthors{1}
 \author{
-\alignauthor
-Dan Tomosoiu, Tony Lau, Hector Grebbell\\
-	   \affaddr{Berserker}\\
-      \affaddr{DIM3}\\
-      \affaddr{Student numbers}\\
-             \email{\{ 1102486T, 1102266L, 1007414G\}@student.gla.ac.uk }
+\alignauthor Dan Tomosoiu, Tony Lau, Hector Grebbell\\
+\affaddr{Berserker}\\
+\affaddr{DIM3}\\
+\affaddr{Student numbers}\\
+\email{\{1102486T, 1102266L, 1007414G\}@student.gla.ac.uk }
 }
 \maketitle
 
 \begin{abstract}
-Provide a concise summary of the design of the application
+%Provide a concise summary of the design of the application
+This report details the design and implementation of Berserker Chat --
+a web-based instant messenger and file sharing application which allows many users to
+collaboratively chat and share files. Berserker Chat is built using the Django Web Framework [1]
+which is written in the Python programming language.
 
 \end{abstract}
 
 \section{Aim of Application}
+The main aim of the application is to provide a service which allows users to communicate with each other in a real-time
+chat environment, not dissimilar to other chat applications which the user may have used before.
+
+\subsection{Goals and Objectives}
+\label{sec: goals}
+The main goals and objectives are listed below:
+\begin{itemize}
+\item Anonymous use of the application to chat with others in public chat rooms
+\item Ability for a logged-in user to have a private chat with another logged-in user
+\item Public chat rooms based on category/interests, e.g. public chat room for users interested in photography
+\item Creation of public chat rooms based on interest which allow other people to find the created room, join and chat
+\item Ability for file sharing between users -- files are uploaded and can be downloaded by other users 
+\end{itemize}
+
 \begin{itemize}
 \item	What is the purpose of the application?
 \item	Eg. The application is an academic search engine called AcaSe and is it is based upon the PuppyIR Framework\cite{glassey2011framework}, which has been used to construct other such services\cite{glassey2010fifi,elliot2010fifi}. The main purpose of this web application is to provide a customized interface to services such as Google Scholar and MS Academic Search. 
@@ -71,18 +88,28 @@ Provide a concise summary of the design of the application
 \end{itemize}
 
 \section{Application Architecture}
+The application is designed to use a 3-tier architecture as illustrated in the diagram below. Using this type of architecture allows
+a separation of concerns between the display of the content on the client browser, the web application framework, and the backend.
+The 3-tier architecture consists of: \\
+\textbf{Client} \\
+The client (user) interacts with the Berserker Chat application through a web browser\\ \\
+\textbf{Middleware} \\
+The middleware is where the Django web framework is positioned. It essentially glues together the client and the backend, providing views based on data contained within the database and also updating the database based on the interactions of the user at the browser interface level.\\ \\
+\textbf{Database} \\
+The database stores information about the models which can be requested by the middleware by an Object Relational Model request. The database is implemented using SQLite3.\\ \\
+
 \begin{itemize}
-\item	N-Tier Architecture Diagram
-\item	i.e. data flow diagram between the interface/client, middle ware, and backend services/data repos
-\item	Describe the data model i.e. what data needs to be stored or persisted by the application?
-\item	What are the relationships within the data model.
-\item	i.e. use ER diagram and explain.
-\item	Describe the backend services used (if any).
+\item	N-Tier Architecture Diagram %nearly done
+\item	i.e. data flow diagram between the interface/client, middle ware, and backend services/data repos %nearly done
+\item	Describe the data model i.e. what data needs to be stored or persisted by the application? %todo
+\item	What are the relationships within the data model. %todo
+\item	i.e. use ER diagram and explain. %todo
+\item	Describe the backend services used (if any). %sqlite3 db to store...
 \item	Reflective Questions: 
-\item	How have you ensured that there is a separation of concerns? 
-\item	What other technology could have been used instead of django? 
-\item	What are the advantages of using a Web Application Framework over other technology? 
-\item	And, what are the disadvantages?
+\item	How have you ensured that there is a separation of concerns? %used the mvc pattern equivalent of django: model view template MTV 
+\item	What other technology could have been used instead of django? %php web frameworks: cakewalk, symphony. others: ruby on rails, spring 
+\item	What are the advantages of using a Web Application Framework over other technology? %more structure perhaps over php for example; encourages a separation of concerns 
+\item	And, what are the disadvantages? %development time could be longer if one is to maintain a clear structure. some web apps can be put together in a short space of time but violate the fundamental separation of concerns that is promoted by the Django web application framework
 \end{itemize}
 
 \section{Message Parsing}
@@ -132,6 +159,7 @@ Provide a concise summary of the design of the application
 \section{Acknowledgements}
 Our thanks to the lecturers and demonstrators for their comments and suggestions. And our thanks to the peer reviewers for their feedback.
 Be sincere and be specific about how others have helped your group.
+
 
 \bibliographystyle{abbrv}
 \bibliography{sig-proc}

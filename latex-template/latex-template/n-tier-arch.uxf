@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>580</x>
+      <y>20</y>
+      <w>160</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>ORM Request
+lt=&lt;-</panel_attributes>
+    <additional_attributes>140;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>240</x>
+      <y>20</y>
+      <w>160</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>HTTP Request
+lt=&lt;-</panel_attributes>
+    <additional_attributes>140;50;30;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>240</x>
+      <y>50</y>
+      <w>168</w>
+      <h>122</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+HTML Response
+Javascript
+CSS
+JSON</panel_attributes>
+    <additional_attributes>30;50;140;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.EER_Entity</type>
+    <coordinates>
+      <x>400</x>
+      <y>60</y>
+      <w>200</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Middleware
+(Django Web Framework)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Actor</type>
+    <coordinates>
+      <x>0</x>
+      <y>40</y>
+      <w>100</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>User</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>50</x>
+      <y>40</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>90;30;30;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>580</x>
+      <y>50</y>
+      <w>162</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>ORM Response
+lt=&lt;-</panel_attributes>
+    <additional_attributes>30;50;140;50</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Database</type>
+    <coordinates>
+      <x>730</x>
+      <y>30</y>
+      <w>110</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>
+Database</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>50</x>
+      <y>70</y>
+      <w>110</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30;30;90;30</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.EER_Entity</type>
+    <coordinates>
+      <x>160</x>
+      <y>60</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>Client
+(Browser)</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
