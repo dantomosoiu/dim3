@@ -158,23 +158,13 @@ function getCookie(name) {
 }
 
 function createPrivateChat(){
-    var name = "";
-    if( $("#left-pane").attr("data-name") == "" ) {
-        name = prompt("Please enter an username");
-    }
-    Dajaxice.BerserkerChat.getPrivateRoom(refreshMe, {'name' : name});
+    Dajaxice.BerserkerChat.getPrivateRoom(refreshMe);
 }
 
 
-function createPublicChat(roomName){
-    var name = "";
-
-    if( $("#left-pane").attr("data-name") == "" ) {
-        name = prompt("Please enter an username");
-    }
-    console.log("fgm");
-
-    Dajaxice.BerserkerChat.getRoom(refreshMe, {'name' : name, 'room' : roomName});
+function createPublicChat(){
+    var roomName=document.forms["new-public-form"]["create-public-chat-subject"].value;
+    Dajaxice.BerserkerChat.getPublicRoom(refreshMe, {'roomname': roomName});
 }
 
 

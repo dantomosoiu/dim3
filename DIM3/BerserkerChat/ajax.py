@@ -9,13 +9,21 @@ from chatrooms import views
 
 
 @dajaxice_register
-def getPrivateRoom(request, name):
-    if (name != ""):
-        request.session['guest_name'] = name
+def getPrivateRoom(request):
     rooms = Room.objects.all()
     new_name = ''.join(random.choice(string.ascii_lowercase) for x in range(2))+str(rooms.count())
     r = Room(name=new_name, slug=new_name, allow_anonymous_access=True)
+    r.save()
+    r = Room.objects.get(slug=new_name)
+    t = loader.get_template('chatrooms/room.html')
 
+    return simplejson.dumps({'name': new_name})
+
+@dajaxice_register
+def getPublicRoom(request, roomname):
+    rooms = Room.objects.all()
+    new_name = ''.join(random.choice(string.ascii_lowercase) for x in range(2))+str(rooms.count())
+    r = Room(name=new_name, slug=new_name, allow_anonymous_access=True)
     r.save()
     r = Room.objects.get(slug=new_name)
     t = loader.get_template('chatrooms/room.html')
