@@ -7,6 +7,7 @@ body {
 	font-size: 13px;
 	color: #386172;
     background-color: #A9C8FA;
+    background-image: url('/static/imgs/hieroglyphs.png');
     display: block;
 }
 *
@@ -57,7 +58,7 @@ color:#386172;
 .refBox
 {
     min-width: 300px;
-    max-width: 300px%;
+    max-width: 300px;
     min-height: 600px;
     height: 800%;
     margin-left: auto;
@@ -423,9 +424,9 @@ ul .right{
 
 /* Styling the colors individually: */
 
-ul a.blue{	background:url(static/img/blue_mid.png) repeat-x top center;	color:#03426e;}
-ul a.blue span.left{ background:url(static/img/blue_left.png) no-repeat left top;}
-ul a.blue span.right{ background:url(static/img/blue_right.png) no-repeat right top;}
+ul a.blue{	background:url('/static/img/blue_mid.png') repeat-x top center;	color:#03426e;}
+ul a.blue span.left{ background:url('/static/img/blue_left.png') no-repeat left top;}
+ul a.blue span.right{ background:url('/static/img/blue_right.png') no-repeat right top;}
 
 /* .. Analogical styles for the red, blue and orange color .. */
 
