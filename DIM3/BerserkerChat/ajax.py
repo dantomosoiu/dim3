@@ -9,39 +9,19 @@ from chatrooms import views
 
 
 @dajaxice_register
-def getPrivateRoom(request, data):
-
-
-
-    if (data != ""):
-        request.session['guest_name'] = data
-
+def getPrivateRoom(request, name):
+    if (name != ""):
+        request.session['guest_name'] = name
     rooms = Room.objects.all()
-    new_slug = ''.join(random.choice(string.ascii_lowercase) for x in range(2))+str(rooms.count())
-
-    if(data != "") :
-        r = Room(name=data+" "+str(rooms.count()), slug=new_slug, allow_anonymous_access=True)
-    else:
-        r = Room(name=request.user.username+" "+str(rooms.count()), slug=new_slug, allow_anonymous_access=True)
+    new_name = ''.join(random.choice(string.ascii_lowercase) for x in range(2))+str(rooms.count())
+    r = Room(name=new_name, slug=new_name, allow_anonymous_access=True)
 
     r.save()
-
-
-    r = Room.objects.get(slug=new_slug)
+    r = Room.objects.get(slug=new_name)
     t = loader.get_template('chatrooms/room.html')
 
+    return simplejson.dumps({'name': new_name})
 
-    if(data != "") :
-        c = RequestContext(request, {'user':data,'room': r })
-    else:
-        c = RequestContext(request, {'user':request.user,'room': r })
-
-
-
-    page = t.render(c)
-
-
-    return simplejson.dumps({'name': "Private(" + r.slug + ")", 'tab':page})
 
 @dajaxice_register
 def getRoom(request, name, room):
@@ -49,12 +29,17 @@ def getRoom(request, name, room):
     if (name != ""):
         request.session['guest_name'] = name
     r, created = Room.objects.get_or_create(name=room, slug=room, allow_anonymous_access=True)
-    print r.slug
     if (created):
         r.save()
-        r = Room.objects.get(slug=room)
+        r = Room.objects.get(name=room)
     c = RequestContext(request, {'user':request.user,'room': r })
     t = loader.get_template('chatrooms/room.html')
     page = t.render(c)
     print page
     return simplejson.dumps({'name': "Public(" + room + ")", 'tab':page})
+
+@dajaxice_register
+def createGuestName(request, name):
+    request.session['guest_name'] = name
+    print name
+    return name

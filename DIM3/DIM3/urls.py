@@ -14,17 +14,19 @@ from dajaxice.core import dajaxice_autodiscover, dajaxice_config
 dajaxice_autodiscover()
 
 urlpatterns = patterns('',
+    url(dajaxice_config.dajaxice_url, include('dajaxice.urls')),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': ROOT_PATH + '/DIM3/static'}),
     url(r'^google/login/$', 'django_openid_auth.views.login_begin', name='openid-login'),
     url(r'^google/login-complete/$', 'django_openid_auth.views.login_complete', name='openid-complete'),
     url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page': '/',}, name='logout'),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^BerserkerChat/', include('BerserkerChat.urls')),
 
-    url(r'^', include('chatrooms.urls')),
-    url(r'^chat/', include('chatrooms.urls')),
-    url(dajaxice_config.dajaxice_url, include('dajaxice.urls')),
-    url(r'^room/', views.index, name='index'),
-    url(r'^$', views.index, name='index'),
+
+
+    url(r'^', include('BerserkerChat.urls')),
+
+    #url(r'^(?!\chat/).*$', views.index, name='index'),
 )
 
 urlpatterns += staticfiles_urlpatterns()

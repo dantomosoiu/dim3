@@ -2,12 +2,93 @@ var tabCounter = 0;
 
 $(document).ready(function () {
 
-    tabCounter = 3;
+    //tabCounter = 3;
 
-    setTabSelectorClick();
+    //setTabSelectorClick();
 
-    checkRoomRequest();
+    //checkRoomRequest();
 
+    var Tabs = {
+	        'Categorised'   : 'BerserkerChat/Categories',
+	        'Popular'   : 'BerserkerChat/Popular',
+	        'Chat' : 'BerserkerChat/room/room'
+	    }
+    var colors = ['blue']
+    /* The colors of the line above the tab when it is active: */
+
+    var topLineColor = {
+        blue:'lightblue'
+    }
+
+    /* Looping through the Tabs object: */
+    var z=0;
+    $.each(Tabs,function(i,j){
+        /* Sequentially creating the tabs and assigning a color from the array: */
+
+        var tmp = $('<li><a href="#" class="tab '+colors[1]+'">'+i+' <span class="left" /><span class="right" /></a></li>');
+
+        /* Setting the page data for each hyperlink: */
+
+        tmp.find('a').data('page',j);
+
+        /* Adding the tab to the UL container: */
+        $('ul.tabContainer').append(tmp);
+    })
+
+    var the_tabs = $('.tab');
+
+    the_tabs.click(function(e){
+        /* "this" points to the clicked tab hyperlink: */
+        var element = $(this);
+
+        href= "http://".concat(getHostname().hostname.concat(element.data('page')));
+
+        /* If it is currently active, return false and exit: */
+        if(element.find('#overLine').length) return false;
+        if(element.is(the_tabs.eq(2))) {
+            if( $("#left-pane").attr("data-name") == "" ) {
+                name = prompt("Please Enter a Screen Name");
+                Dajaxice.BerserkerChat.createGuestName(updateUser, {'name' : name});
+            }
+            href = "http://".concat(getHostname().hostname.concat(getHostname().roomname));
+        }
+
+        /* Detecting the color of the tab (it was added to the class attribute in the loop above): */
+        var bg = element.attr('class').replace('tab ','');
+
+        /* Removing the line: */
+        $('#overLine').remove();
+
+        /* Creating a new line with jQuery 1.4 by passing a second parameter: */
+        $('<div>',{
+            id:'overLine',
+            css:{
+                display:'none',
+                width:element.outerWidth()-2,
+                background:topLineColor[bg] || 'white'
+            }}).appendTo(element).fadeIn('slow');
+
+        /* Checking whether the AJAX fetched page has been cached: */
+
+        if(!element.data('cache'))
+        {
+            /* If no cache is present, show the gif preloader and run an AJAX request: */
+            $('#contentHolder').html('<img src="static/img/ajax_preloader.gif" width="64" height="64" class="preloader" />');
+
+            $.get(href,function(msg){
+
+                $('#contentHolder').html(msg);
+
+
+            });
+        }
+        else $('#contentHolder').html(element.data('cache'));
+
+        e.preventDefault();
+    })
+
+    /* Emulating a click on the first tab so that the content area is not empty: */
+    the_tabs.eq(0).click();
 });
 
 
@@ -51,8 +132,12 @@ var setTabSelectorClick = function(){
     });
 }
 
-function my_callback(data){
-    addTab(data.name, data.tab);
+function refreshMe(data){
+    window.location = "http://".concat(getHostname().hostname.concat("room/").concat(data.name))
+}
+
+function updateUser(data){
+    $("#left-pane").setAttribute("data-name",data);
 }
 
 
@@ -72,7 +157,16 @@ function getCookie(name) {
     return cookieValue;
 }
 
-function createChat(roomName){
+function createPrivateChat(){
+    var name = "";
+    if( $("#left-pane").attr("data-name") == "" ) {
+        name = prompt("Please enter an username");
+    }
+    Dajaxice.BerserkerChat.getPrivateRoom(refreshMe, {'name' : name});
+}
+
+
+function createPublicChat(roomName){
     var name = "";
 
     if( $("#left-pane").attr("data-name") == "" ) {
@@ -80,7 +174,7 @@ function createChat(roomName){
     }
     console.log("fgm");
 
-    Dajaxice.BerserkerChat.getRoom(my_callback, {'name' : name, 'room' : roomName});
+    Dajaxice.BerserkerChat.getRoom(refreshMe, {'name' : name, 'room' : roomName});
 }
 
 

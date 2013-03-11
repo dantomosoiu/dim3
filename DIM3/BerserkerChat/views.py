@@ -12,8 +12,14 @@ from chatrooms.models import Room
 import string, random
 
 def index(request):
-    context = RequestContext(request)
+    HOSTNAME =  request.get_host() + "/"
+    roomname = request.path
+    if (roomname == "/"):
+        roomname = "room"
+    else:
+        roomname = roomname.rsplit('/', 1)[1]
     loggedin = False
+    print roomname
     invalidAttempt = False
     if request.method == 'POST':
         username = request.POST['username']
@@ -31,13 +37,11 @@ def index(request):
             # Return an 'invalid login' error message.
             invalidAttempt = True
             print  "Invalid Password or Username " + username + " Does not exist"
-            #return render_to_response('BerserkerChat/index.html', {}, context)
-            return render(request, 'BerserkerChat/index.html', {'showroomurl': False,'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
+            return render(request, 'BerserkerChat/index.html', {'room': Room.objects.get(slug=roomname.rsplit('/', 1)[1]), 'ROOMNAME': roomname, 'user': request.user, 'host': HOSTNAME, 'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
     elif request.user.is_authenticated():
-        print "here"
         loggedin = True
 
-    return render(request, 'BerserkerChat/index.html', {'showroomurl': False,'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
+    return render(request, 'BerserkerChat/index.html', {'room': Room.objects.get(slug=roomname), 'ROOMNAME': "BerserkerChat/chat/room/"+roomname, 'user': request.user, 'host': HOSTNAME, 'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
 
 
 def register(request):
@@ -79,8 +83,9 @@ def user_logout(request):
     context=RequestContext(request)
     logout(request)
 
-def private_link(request):
-    rooms = Room.objects.all()
-    r = Room(name=request.user.username+" "+str(rooms.count()), slug=''.join(random.choice(string.ascii_lowercase) for x in range(2))+str(rooms.count()), allow_anonymous_access=True)
-    r.save()
-    return render(request, 'BerserkerChat/index.html', {'showroomurl': True,'room': "http://"+request.get_host()+"/room/"+r.slug, 'loggedin': request.user.is_authenticated(), 'invalidAttempt': False })
+
+def Categories(request):
+    return render(request, 'chatrooms/Categories.html')
+
+def Popular(request):
+    return render(request, 'chatrooms/Popular.html')

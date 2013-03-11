@@ -1,9 +1,16 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import patterns, url, include
 
 from BerserkerChat import views
 
+from dajaxice.core import dajaxice_autodiscover, dajaxice_config
+dajaxice_autodiscover()
+
 urlpatterns = patterns('',
-    url(r'^$', views.index, name='index'),
     url(r'^register/$', views.register, name='register'),
     url(r'^login/$', views.login, name='login'),
+    url(r'^Categories$', views.Categories, name='Categories'),
+    url(r'^Popular$', views.Popular, name='Popular'),
+    url(r'^chat/', include('chatrooms.urls')),
+    url(r'^room/', views.index, name='index'),
+    url(r'^$', views.index, name='index')
 )
