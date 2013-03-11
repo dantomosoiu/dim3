@@ -274,6 +274,10 @@ p {text-align: left;}
 
 }
 
+.main-category{
+    font-size: 18px;
+}
+
 .list-inactive {
     display:none;
 }

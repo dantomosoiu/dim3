@@ -87,5 +87,5 @@ def user_logout(request):
 def Categories(request):
     return render(request, 'chatrooms/Categories.html')
 
-def Popular(request):
-    return render(request, 'chatrooms/Popular.html')
+def Recent(request):
+    return render(request, 'chatrooms/Recent.html')

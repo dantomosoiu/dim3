@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     url(r'^register/$', views.register, name='register'),
     url(r'^login/$', views.login, name='login'),
     url(r'^Categories$', views.Categories, name='Categories'),
-    url(r'^Popular$', views.Popular, name='Popular'),
+    url(r'^Recent$', views.Recent, name='Recent'),
     url(r'^chat/', include('chatrooms.urls')),
     url(r'^room/', views.index, name='index'),
     url(r'^$', views.index, name='index')

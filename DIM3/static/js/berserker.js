@@ -10,7 +10,7 @@ $(document).ready(function () {
 
     var Tabs = {
 	        'Categorised'   : 'BerserkerChat/Categories',
-	        'Popular'   : 'BerserkerChat/Popular',
+	        'Recent'   : 'BerserkerChat/Recent',
 	        'Chat' : 'BerserkerChat/room/room'
 	    }
     var colors = ['blue']
