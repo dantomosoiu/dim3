@@ -444,3 +444,19 @@ ul a:hover span.right{ background-position:right bottom;}
     -webkit-box-shadow: inset 1px 1px 1px #040404;
     box-shadow: inset 0px 0px 1px 1px #040404;
 }
+
+#category-filter{
+    margin-right: 13px;
+    margin-top: 8px;
+    float: right;
+}
+
+#category-button-controls-container {
+    float: right;
+    margin-right: 8px;
+}
+
+
+#category-button-controls-container input {
+    width: 104px;
+}

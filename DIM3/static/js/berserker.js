@@ -99,6 +99,29 @@ $(document).ready(function () {
     /* Emulating a click on the first tab so that the content area is not empty: */
     the_tabs.eq(0).click();
 
+
+    $('#category-filter').change(function() {
+        $('.main-category').next('ul').removeClass("list-inactive");
+        $('.main-category').next('ul').addClass("list-active");
+        $('.room-list-element').css("display", "");
+        var val = $('#category-filter').val();
+        if(val != ''){
+            val = val.toLowerCase();
+            console.log(val);
+            $('.room-list-element').css("display", "none");
+            $('.room-list-element').each(function( index ) {
+                var cat = $($(this).children()[0]).text();
+                if(cat == null || cat == undefined || cat == ""){
+
+                } else {
+                    if(cat.toLowerCase().indexOf(val) > -1){
+                        $(this).css("display", "");
+                    }
+                }
+            });
+        }
+    });
+
 });
 
 

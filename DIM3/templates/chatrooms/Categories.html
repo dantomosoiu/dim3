@@ -8,6 +8,11 @@
 
     <div id="category-list-holder">
 
+    <div id="category-button-controls-container">
+        <input id="colapse-all-btn" type="button" class="btn" value="collapse all"/>
+        <input id="expand-all-btn" type="button" class="btn" value="expand all"/>
+    </div>
+
     <ul class="categories-list">
 
 
@@ -152,8 +157,8 @@
             <li class="room-list-element"><a href="/room/compsci">Computer Science</a></li>
             <li class="room-list-element"><a href="/room/compsci">Computer Science</a></li>
             <li class="room-list-element"><a href="/room/compsci">Computer Science</a></li>
-            <li class="room-list-element"><a href="/room/compsci">Computer Science</a></li>
-            <li class="room-list-element"><a href="/room/compsci">Computer Science</a></li>
+            <li class="room-list-element"><a href="/room/compsci">asdf</a></li>
+            <li class="room-list-element"><a href="/room/compsci">Zxcas</a></li>
         </ul>
     </ul>
 
@@ -178,6 +183,20 @@
             subList.addClass("list-inactive");
             $(this).css("list-style-image", "url('/static/imgs/plus.gif')");
         }
+    });
+
+    $("#expand-all-btn").click(function(){
+        $("#category-filter").val("");
+        $('.main-category').next('ul').removeClass("list-inactive");
+        $('.main-category').next('ul').addClass("list-active");
+        $('.room-list-element').css("display", "");
+    });
+
+    $("#colapse-all-btn").click(function(){
+        $("#category-filter").val("");
+        $('.main-category').next('ul').removeClass("list-active");
+        $('.main-category').next('ul').addClass("list-inactive");
+        $('.room-list-element').css("display", "");
     });
 
 </script>
