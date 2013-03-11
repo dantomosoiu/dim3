@@ -1,4 +1,5 @@
 var tabCounter = 0;
+var roomName = "";
 
 $(document).ready(function () {
 
@@ -87,6 +88,10 @@ $(document).ready(function () {
             });
         }
         else $('#contentHolder').html(element.data('cache'));
+
+        roomName = getHostname().roomname;
+
+
 
         e.preventDefault();
     })
