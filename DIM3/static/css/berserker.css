@@ -52,6 +52,18 @@ color:#386172;
     background-color: #FFFFFF;
     display: block;
 }
+.refBox
+{
+    min-width: 300px;
+    max-width: 300px%;
+    min-height: 600px;
+    height: 800%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 12em
+}
 
 .contentBox .innerBox
 {

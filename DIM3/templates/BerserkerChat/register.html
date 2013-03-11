@@ -1,5 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+{% load dajaxice_templatetags %}
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -7,70 +9,73 @@
     <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
 
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/berserker.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/room.css">
 
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
 
-    <title>Hello</title>
+    {% dajaxice_js_import %}
+
+
+    <title>Welcome to BerserkerChat</title>
 </head>
 
-<body>
-<div id="page">
-    <div class="topNaviagationLink"><a href="/">Home</a></div>
-    <div class="topNaviagationLink"><a href="/google/login/?next=/">Login</a></div>
-    <div class="topNaviagationLink"><a href="/register/">Register Here</a></div>
-    <div class="topNaviagationLink"><a href="/room/room1">Chat</a></div>
-    <div class="topNaviagationLink"><a href="mailto:hectorgrebbell@googlemail.com">Contact</a></div>
-</div>
+<body data-request="{{ pageurl }}">
+
+<br/>
 <div class="contentBox">
-    <div class="innerBox">
-
-        <div id="room-container">
-            {% if registered %}
-                <A href="/BerserkerChat/">Berserker Chat</A>: thank you for registering.
-            {% else %}
-                Berserker Chat: register here!
-                <FORM id="user_form" method="post" action="/BerserkerChat/register/" enctype="multipart/form-data" >
-                    {% csrf_token %}
-                    {{ uform.as_p }}
-                    {{ pform.as_p }}
-                    <INPUT type="submit" name="submit" value="submit" />
-                </FORM>
-            {% endif %}
-        </div>
+    <br/><br/>
+    <div class="refBox">
+        {% if registered %}
+            <A href="/">Berserker Chat</A>: thank you for registering.
+        {% else %}
+            Berserker Chat: register here!
+            <FORM id="user_form" method="post" action="/BerserkerChat/register/" enctype="multipart/form-data" >
+                {% csrf_token %}
+                {{ uform.as_p }}
+                <INPUT type="submit" name="submit" value="submit" />
+            </FORM>
+        {% endif %}
     </div>
 
-    <div id="left-pane">
-        <p>Do you have someone with whom you need to talk in private or send a file? Just click below and pass him the
-            link that appears in the browser!</p>
-        <input type="button" value="Create private chat"/>
+    {% if user.is_authenticated %}
+        <div id="left-pane" data-name='{{ user.username }}'>
+    {% else %}
+        <div id="left-pane" data-name=''>
+    {% endif %}
+    <p>Do you have someone with whom you need to talk in private or send a file? Just click below and pass him the
+        link that appears in the browser!</p>
+    <form id="new-private-form">
+        <input type="button" value="Create private chat" onclick="createPrivateChat()"/>
+    </form>
+    <hr/>
 
-        <hr/>
+    <p>Want to talk to a complete stranger ?
+        Choose to create or join a random chat room and we'll quickly pair you with a partner. If you want to talk
+        about a certain subject, we'll do our best to find you a match!</p>
 
-        <p>Want to talk to a complete stranger ?
-            Choose to create or join a random chat room and we'll quickly pair you with a partner. If you want to talk
-            about a certain subject, we'll do our best to find you a match!</p>
-
-        <form id="create-public-chat-form">
-            <p>Enter a topic here: (optional)</p>
-            <textarea cols="20" id="create-public-chat-subject" rows="5" name="public-chat-subject">Looking for someone
-                interested in talking about cats!</textarea>
-
-            <input type="submit" value="Create private chat" id="create-public-chat-submit">
-        </form>
+    <form id="new-public-form">
+        <p>Enter a topic here: </p>
+        <textarea cols="10" id="create-public-chat-subject" rows="4" name="public-chat-subject">Looking for someone interested in talking about cats!</textarea>
+        <input type="button" value="Create Public chat" onclick="createPublicChat()"/>
+    </form>
     </div>
+
 
 
     <div id="right-pane">
         {% if loggedin %}
-            <A href="/BerserkerChat/">My Account</A><br/>
-            <A href="/logout">Log Out</A>
+            <div id="right-pane-account-holder"><p>You are signed in as <a
+                    href="/BerserkerChat/MyAccount"> {{ user.username }} </a></p></div>
+            <a href="/logout"> <input type="button" value="Sign Out" id="sign-out-button"> </a>
         {% else %}
-            <form id="login-form" method="post" action="/BerserkerChat/">
+            {% if invalidAttempt %} Invalid Username or Password<br/>{% endif %}
+            <form id="login-form" method="post" action="/">
                 {% csrf_token %}
-                <input type="text" name="username"/>
+                <input type="text" placeholder="Username" name="username"/>
                 <br/>
-                <input type="password" name="password"/>
+                <input type="password" placeholder="Password" name="password"/>
                 <br/>
                 <input type="submit" value="Submit" id="submit-login">
 
@@ -106,6 +111,7 @@
             </script>
         </div>
 
+    </div>
     </div>
 </div>
 
