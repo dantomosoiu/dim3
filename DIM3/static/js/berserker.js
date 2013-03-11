@@ -6,6 +6,7 @@ $(document).ready(function () {
 
     setTabSelectorClick();
 
+    checkRoomRequest();
 
 });
 
@@ -26,6 +27,17 @@ var addTab = function (name, content) {
     $(newTab).show();
 };
 
+var checkRoomRequest = function(){
+    var req = $("body").attr("data-request");
+
+    var pieces = req.split('/');
+
+        console.log(pieces);
+
+        if(pieces[1] == "room" && pieces[2].match("^[a-zA-Z0-9]+$")){
+            createChat(pieces[2]);
+        }
+}
 
 var setTabSelectorClick = function(){
     $('#tab-selector li').click(function (event) {
@@ -60,13 +72,16 @@ function getCookie(name) {
     return cookieValue;
 }
 
-function createPrivateChat(){
+function createChat(roomName){
     var name = "";
 
     if( $("#left-pane").attr("data-name") == "" ) {
         name = prompt("Please enter an username");
     }
-    Dajaxice.BerserkerChat.getPrivateRoom(my_callback, {'data': name});
+    console.log("fgm");
+
+    Dajaxice.BerserkerChat.getRoom(my_callback, {'name' : name, 'room' : roomName});
 }
+
 
 var csrftoken = getCookie('csrftoken');
