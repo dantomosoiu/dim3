@@ -7,8 +7,13 @@
             <div id="chatText"></div>
             <div id="chatInput">
                 {% csrf_token %}
+
+
                 <input id="chatSendText" name="chatSendText" type="text" >
-                <input id="chatSendButton" type="button" value="Send">
+                <input class="btn" id="chatSendButton" type="button" value="Send">
+                <input class="btn" id="chatShareButton" type="button" value="Share">
+
+
             </div>
         </div>
         <div id="connectedUsers">

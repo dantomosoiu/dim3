@@ -1,67 +1,73 @@
 #chatContent{
     background-color: #E9FFFF;
     font-family: Helvetica, Arial, "MS Trebuchet", sans-serif;
+    height: 100%;
 }
 
 #chat {
     width: 80%;
+    height: 99%;
     display: inline;
     float: left;
     background-color: #FFFFFF;
-    border-style: outset;
+    border: 2px solid white;
+    border-right-style: outset;
 }
 
 #chatText {
     overflow: auto;
     position: relative;
-    height: 70%;
+    height: 73%;
+    float:none;
     width: 100%;
 }
 
+#chatInput {
+    text-align: center;
+    width: 100%;
+
+}
+
 #chatInput input{
-    float: left;
+
 }
 
 #chatSendText {
-    border:none;
-    position: relative;
-    height: 32px;
-    width: 78%;
+    margin:1px;
+    clear:right;
+    left:0px;
+    width: 96%;
+    right:160px;
+    height: 38px;
+    min-width: 300px;
     font-size: 18px;
     padding-top: 9px;
-    padding-left: 4px;
-    outline-style:none;
+    padding-left: 7px;
+    outline-style: none;
     font-family: Helvetica, Arial, "MS Trebuchet", sans-serif;
     color: #5a5a5a;
-    -webkit-box-shadow: inset 2px 2px 1px #888888; 
-    box-shadow: inset 2px 2px 1px #888888;
+    -webkit-box-shadow: inset 2px 2px 1px #888888;
+    box-shadow: inset 0px 0px 2px 2px #888888;
 }
 
-#chatSendButton{
-    border:none;
-    position: relative;
-    float: left;
-    height: 32px;
-    width: 20%;
+#chatSendButton, #chatShareButton{
+    height: 51px;
     font-size: 18px;
-    background-color: #888888;
     font-family: Helvetica, Arial, "MS Trebuchet", sans-serif;
-    -webkit-box-shadow: 2px 2px 1px #888888; /* Safari and Chrome */
-    box-shadow: 2px 2px 1px #888888;
+    -webkit-box-shadow: inset 2px 2px 2px #888888;
+    box-shadow: inset 0px 0px 2px 2px #888888;
+    width: 49%;
 }
 
-#chatSendButton:active, #chatSendButton.pressed{
-    border:none;
-    position: relative;
-    float: left;
-    height: 32px;
-    width: 20%;
-    font-size: 18px;
-    background-color: #888888;
-    font-family: Helvetica, Arial, "MS Trebuchet", sans-serif;
-    box-shadow: inset 2px 2px 1px #888888;
+#chatSendButton:active, #chatSendButton.pressed, #chatShareButton:active, #chatShareButton.pressed{
+    -webkit-box-shadow: inset 2px 2px 3px #888888;
+    box-shadow: inset 0px 0px 2px 3px #888888;
 }
 
+#chatSendButton:hover, #chatShareButton:hover {
+    -webkit-box-shadow: inset 2px 2px 2px #040404;
+    box-shadow: inset 0px 0px 2px 2px #040404;
+}
 
 .chatMessage {
     background-color: #C9C9C9;

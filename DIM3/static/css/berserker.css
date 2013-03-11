@@ -286,6 +286,11 @@ p {text-align: left;}
 
 }
 
+#category-list-holder {
+    overflow-y: scroll;
+    height: 100%;
+}
+
 .main-category{
     font-size: 18px;
 }
@@ -305,8 +310,7 @@ p {text-align: left;}
     color: #444444;
     padding: 0px;
     padding-top: 15px;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: hidden;
     width: 100%;
 }
 

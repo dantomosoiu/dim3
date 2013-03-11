@@ -66,7 +66,7 @@ $(function(){
                     "room_id": Context.room_id,
                     "message": escape(getEscapedText($('#chatSendText').val()))
                 },
-                success: function() {  },
+                success: function() { $('#chatSendText').val("") },
                 error: function() {  },
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader('X-CSRFToken', csrftoken);}
