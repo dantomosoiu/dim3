@@ -89,6 +89,7 @@ $(document).ready(function () {
 
     /* Emulating a click on the first tab so that the content area is not empty: */
     the_tabs.eq(0).click();
+
 });
 
 
