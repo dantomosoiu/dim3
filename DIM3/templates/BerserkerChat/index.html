@@ -45,7 +45,9 @@
     <div class="innerBox">
         <div id="inner-header">
             {% if not user.is_authenticated %}
+                <div id="header-text">
                 You Are Anonymous<br/>Want an Account?<br/><a href="/register">Click here to register</a>
+                </div>
             {% endif %}
         </div>
         <div id="tab-container">
@@ -69,12 +71,15 @@
     {% else %}
         <div id="left-pane" data-name=''>
     {% endif %}
+
+    <img src="static/imgs/logo.png" alt="Berserker Chat" title="Berserker Chat" />
+
+
     <p>Do you have someone with whom you need to talk in private or send a file? Just click below and pass him the
         link that appears in the browser!</p>
     <form id="new-private-form">
-        <input type="button" value="Create private chat" onclick="createPrivateChat()"/>
+        <input id="private-chat-button" type="button" value="Create private chat" onclick="createPrivateChat()"/>
     </form>
-    <hr/>
 
     <p>Want to talk to a complete stranger ?
         Choose to create or join a random chat room and we'll quickly pair you with a partner. If you want to talk
@@ -85,8 +90,9 @@
         <textarea cols="10" id="create-public-chat-subject" rows="4" name="public-chat-subject">Looking for someone interested in talking about cats!</textarea>
         <input type="button" value="Create Public chat" onclick="createPublicChat()"/>
     </form>
-    </div>
 
+
+    </div>
 
 
     <div id="right-pane">

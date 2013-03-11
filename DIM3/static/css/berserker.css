@@ -186,12 +186,20 @@ color:#386172;
     margin: 10px 2px;
 }
 
+#private-chat-button{
+    margin-bottom: 52px;
+}
+
 #create-public-chat-form {
     margin-top: 10px;
 }
 
 #left-pane p {
     margin: 3px;
+}
+
+#left-forms-container{
+    margin-top: 10px;
 }
 
 .topNaviagationLink a:hover
@@ -227,7 +235,10 @@ color:#A9C8FA;
 font-family:"Adobe Garamond Pro Bold", Georgia, "Times New Roman", Times, serif;
 }
 
-
+#header-text {
+    text-align: center;
+    padding-top: 12px;
+}
 
 .contentTitle
 {
@@ -253,6 +264,7 @@ margin-right:13px;
 }
 
 #footer {
+    z-index: -99;
     width: 100%;
     text-align: center;
     font-size: 9px;
@@ -317,7 +329,7 @@ p {text-align: left;}
 #tabContent{
     background-color:#333;
     border:1px solid #444;
-    margin-top:-15px;
+    margin-top:-24px;
     width:100%;
 }
 
