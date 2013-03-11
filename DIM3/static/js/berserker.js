@@ -48,6 +48,10 @@ $(document).ready(function () {
         if(element.is(the_tabs.eq(2))) {
             if( $("#left-pane").attr("data-name") == "" ) {
                 name = prompt("Please Enter a Screen Name");
+                if(name == "") {
+                    name = "Anonymous";
+                }
+
                 Dajaxice.BerserkerChat.createGuestName(updateUser, {'name' : name});
             }
             href = "http://".concat(getHostname().hostname.concat(getHostname().roomname));
