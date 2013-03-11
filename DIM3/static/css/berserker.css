@@ -94,7 +94,7 @@ color:#386172;
 #tab-container{
     background: #FFFFFF;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 80px;
     margin-left: 235px;
     margin-right: 170px;
     min-width: 400px;
@@ -278,17 +278,32 @@ p {text-align: left;}
     /* The UL */
     float:left;
     padding-left:13px;
+    position: relative;
+    top: 6px;
+}
+
+.categories-list{
+
+}
+
+.list-inactive {
+    display:none;
+}
+
+.list-active {
+
 }
 
 #contentHolder{
-    background-color:#FFFFFF;
-    border:2px solid #FFFFFF;
-    height:400px;
-    margin:2px;
-
-    color:#444444;
-    padding:15px;
-    padding-top: 15;
+    background-color: #FFFFFF;
+    height: 400px;
+    margin: 0px;
+    color: #444444;
+    padding: 0px;
+    padding-top: 15px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 #tabContent{
