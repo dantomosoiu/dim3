@@ -51,6 +51,8 @@ color:#386172;
     height: 100%;
     background-color: #FFFFFF;
     display: block;
+    -webkit-box-shadow: inset 2px 2px 3px rgb(115, 180, 180);
+    box-shadow: 0px 0px 2px 3px rgb(115, 180, 180);
 }
 .refBox
 {
@@ -152,6 +154,10 @@ color:#386172;
     width: 120px;
     text-align: center;
     margin: 0px 14px;
+}
+
+#right-pane-account-holder > p {
+    text-align: center;
 }
 
 #sign-out-button {
@@ -300,7 +306,12 @@ p {text-align: left;}
 
 #category-list-holder {
     overflow-y: scroll;
+    padding-left: 14px;
     height: 100%;
+}
+
+#recent-rooms-holder{
+    padding-left: 14px;
 }
 
 .main-category{

@@ -40,13 +40,16 @@
 
 <body data-request="{{ pageurl }}">
 
-<br/>
 <div class="contentBox">
     <div class="innerBox">
         <div id="inner-header">
             {% if not user.is_authenticated %}
                 <div id="header-text">
                 You Are Anonymous<br/>Want an Account?<br/><a href="/register">Click here to register</a>
+                </div>
+            {% else %}
+                <div id="header-text">
+                    Welcome, {{ user.username }}!<br/> You have a basic account.<br/>Don't want to see ads? <a href="/upgrade">Click here to upgrade</a>
                 </div>
             {% endif %}
         </div>

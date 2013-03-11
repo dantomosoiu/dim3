@@ -84,6 +84,8 @@
 }
 
 #connectedUsers{
+    margin-top: 12px;
+    margin-left: 17px;
     overflow: auto;
     position: relative;
     width: 15%;
