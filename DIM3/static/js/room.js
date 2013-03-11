@@ -119,8 +119,12 @@ $(function(){
             type: "GET",
             success: function(data) {
                 var chatText = getChatText(data)
-                $('#chatText').append(chatText);
-                $("#chatText").scrollTop($("#chatText")[0].scrollHeight);
+                if(chatText != []){
+                    $('#chatText').append(chatText);
+                    $("#chatText").scrollTop($("#chatText")[0].scrollHeight);
+                } else {
+                    //no data received, shouldn't scroll down
+                }
                 window.setTimeout(chatGetMessages, 0);
             },
             error: function(jqXHR, textStatus, errorThrown){

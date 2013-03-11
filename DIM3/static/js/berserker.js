@@ -147,7 +147,7 @@ function refreshMe(data){
 }
 
 function updateUser(data){
-    $("#left-pane").setAttribute("data-name",data);
+    $("#left-pane").attr("data-name",data);
 }
 
 
