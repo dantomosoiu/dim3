@@ -120,8 +120,7 @@ $(function(){
             success: function(data) {
                 var chatText = getChatText(data)
                 $('#chatText').append(chatText);
-                $("#chatText").attr({
-                    scrollTop: $("#chatText").attr("scrollHeight")});
+                $("#chatText").scrollTop($("#chatText")[0].scrollHeight);
                 window.setTimeout(chatGetMessages, 0);
             },
             error: function(jqXHR, textStatus, errorThrown){
