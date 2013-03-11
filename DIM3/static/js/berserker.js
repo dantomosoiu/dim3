@@ -26,7 +26,7 @@ $(document).ready(function () {
     $.each(Tabs,function(i,j){
         /* Sequentially creating the tabs and assigning a color from the array: */
 
-        var tmp = $('<li><a href="#" class="tab '+colors[1]+'">'+i+' <span class="left" /><span class="right" /></a></li>');
+        var tmp = $('<li><a href="#" class="tab btn btn-inverse">'+i+' <span class="left" /><span class="right" /></a></li>');
 
         /* Setting the page data for each hyperlink: */
 

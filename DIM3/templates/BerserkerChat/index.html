@@ -81,7 +81,7 @@
     <p>Do you have someone with whom you need to talk in private or send a file? Just click below and pass him the
         link that appears in the browser!</p>
     <form id="new-private-form">
-        <input id="private-chat-button" type="button" value="Create private chat" onclick="createPrivateChat()"/>
+        <input class="btn" id="private-chat-button" type="button" value="Create private chat" onclick="createPrivateChat()"/>
     </form>
 
     <p>Want to talk to a complete stranger ?
@@ -91,7 +91,7 @@
     <form id="new-public-form">
         <p>Enter a topic here: </p>
         <textarea cols="10" id="create-public-chat-subject" rows="4" name="public-chat-subject">Looking for someone interested in talking about cats!</textarea>
-        <input type="button" value="Create Public chat" onclick="createPublicChat()"/>
+        <input class="btn" type="button" value="Create Public chat" onclick="createPublicChat()"/>
     </form>
 
 
@@ -102,7 +102,7 @@
         {% if loggedin %}
             <div id="right-pane-account-holder"><p>You are signed in as <a
                     href="/BerserkerChat/MyAccount"> {{ user.username }} </a></p></div>
-            <a href="/logout"> <input type="button" value="Sign Out" id="sign-out-button"> </a>
+            <a href="/logout"> <input class="btn" type="button" value="Sign Out" id="sign-out-button"> </a>
         {% else %}
             {% if invalidAttempt %} Invalid Username or Password<br/>{% endif %}
             <form id="login-form" method="post" action="/">
@@ -111,7 +111,7 @@
                 <br/>
                 <input type="password" placeholder="Password" name="password"/>
                 <br/>
-                <input type="submit" value="Submit" id="submit-login">
+                <input class="btn" type="submit" value="Submit" id="submit-login">
 
                 <a href="/google/login">
                     <img id="google-login" src="/static/imgs/google.png" alt="Log In With Google"></a>

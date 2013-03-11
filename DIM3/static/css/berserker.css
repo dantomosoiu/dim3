@@ -86,6 +86,11 @@ color:#386172;
     text-align: center;
 }
 
+#left-pane textarea {
+    resize: vertical;
+    max-height: 180px;
+}
+
 #inner-header{
     text-align: center;
     margin-left: 235px;
@@ -307,11 +312,13 @@ p {text-align: left;}
 #category-list-holder {
     overflow-y: scroll;
     padding-left: 14px;
+    padding-top: 15px;
     height: 100%;
 }
 
 #recent-rooms-holder{
     padding-left: 14px;
+    padding-top: 15px;
 }
 
 .main-category{
@@ -332,13 +339,12 @@ p {text-align: left;}
     margin: 0px;
     color: #444444;
     padding: 0px;
-    padding-top: 15px;
     overflow: hidden;
     width: 100%;
 }
 
 #tabContent{
-    background-color:#333;
+    background-color:#A9C8FA;
     border:1px solid #444;
     margin-top:-24px;
     width:100%;
@@ -431,4 +437,9 @@ ul a:hover span.right{ background-position:right bottom;}
 .preloader{
     display:block;
     margin:120px auto;
+}
+
+.btn:hover{
+    -webkit-box-shadow: inset 1px 1px 1px #040404;
+    box-shadow: inset 0px 0px 1px 1px #040404;
 }
