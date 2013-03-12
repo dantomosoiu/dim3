@@ -8,6 +8,7 @@ dajaxice_autodiscover()
 urlpatterns = patterns('',
     url(r'^register/$', views.register, name='register'),
     url(r'^upgrade/$', views.upgrade, name='upgrade'),
+    url(r'^myaccount/$', views.myaccount, name='myaccount'),
     url(r'^login/$', views.login, name='login'),
     url(r'^Categories$', views.Categories, name='Categories'),
     url(r'^Recent$', views.Recent, name='Recent'),

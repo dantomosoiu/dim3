@@ -103,7 +103,7 @@
     <div id="right-pane">
         {% if loggedin %}
             <div id="right-pane-account-holder"><p>You are signed in as <a
-                    href="/BerserkerChat/MyAccount"> {{ user.username }} </a></p></div>
+                    href="/BerserkerChat/myaccount"> {{ user.username }} </a></p></div>
             <a href="/logout"> <input class="btn" type="button" value="Sign Out" id="sign-out-button"> </a>
         {% else %}
             {% if invalidAttempt %} Invalid Username or Password<br/>{% endif %}
