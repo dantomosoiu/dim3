@@ -164,6 +164,20 @@ The database stores information about the models which can be requested by the m
 \item	And, what are the disadvantages? %development time could be longer if one is to maintain a clear structure. some web apps can be put together in a short space of time but violate the fundamental separation of concerns that is promoted by the Django web application framework
 \end{itemize}
 
+\subsection{Reflections on Application Architecture}
+Separation of concerns is extremely important to ensure a consistent structure of the application and to ensure maintainability. It also allows development to happen in parallel, e.g. someone could be working on the HTML and CSS of a page, and someone could be working on the database backend. The separation of concerns in this application has been achieved by using the Model, View, Template pattern in Django. \\
+
+This allows the display of the application on the user's browser to be separated from the business logic of the application. The view is responsible for mapping a URL to the data which should be displayed. The template controls how the data identified by a particular view is displayed to the user. The model is essentially a description or definition of the data that the application stores in a database. This maps easily to a relational database model. The view interacts with the model to obtain information for display using the template. \\
+
+Other web technologies/frameworks could have been used instead of Django with some gaining a lot of traction and support from the web development community. Some of these are: Symphony, Ruby on Rails and Cakewalk. \\
+
+\textbf{Advantages and Disavantages of using Web Application Frameworks (WAFs)}
+\begin{itemize}
+\item Web application frameworks can decrease the time it takes to develop an application but also introduces the possibiity of a high learning curve to learn how to effectively and efficiently use the framework to enhance web development.
+\item Many WAFs are built upon some underlying design patterns, e.g. Django effectively uses the Model-View-Controller (MVC) pattern. This encourages the developer to adhere to software engineering best practices, which in turn allows high quality, maintanable applications to be built.
+\item Security issues and bugs found in the framework can affect all application that use that particular framework.
+\end{itemize}
+
 \section{Message Parsing}
 \begin{itemize}
 
