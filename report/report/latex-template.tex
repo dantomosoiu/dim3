@@ -56,34 +56,64 @@ The main goals and objectives are listed below:
 \item Ability for file sharing between users -- files are uploaded and can be downloaded by other users 
 \end{itemize}
 
+\subsubsection{Functionality}
+\label{sec: functionality}
+%\item Functionality List: i.e. what is the required and desired functionality?
+More specifically, the desired functionality of the web application is as follows:
 \begin{itemize}
-\item	What is the purpose of the application?
-\item	Eg. The application is an academic search engine called AcaSe and is it is based upon the PuppyIR Framework\cite{glassey2011framework}, which has been used to construct other such services\cite{glassey2010fifi,elliot2010fifi}. The main purpose of this web application is to provide a customized interface to services such as Google Scholar and MS Academic Search. 
-\item	What are the assumptions about the aims and objectives?
-\item	Describe the design goals and objectives of the application.
-\item	What are the constraints of the project?
-\item	Functionality List: i.e. what is the required and desired functionality?
+\item Allow user to login and logout
+\item Start a public chat
+\item Start a private chat
+\item Choose a chat by category
+\item Allow user to filter chats specifically by searching for a category
+\item A display of the recent chats that the user has been involved in
+\item A file sharing interface in the chat room for users to share files with each other
+\end{itemize}
+%\begin{itemize}
+%\item	What is the purpose of the application?
+%\item	Eg. The application is an academic search engine called AcaSe and is it is based upon the PuppyIR Framework\cite{glassey2011framework}, which has been used to construct other such services\cite{glassey2010fifi,elliot2010fifi}. The main purpose of this web application is to provide a customized interface to services such as Google Scholar and MS Academic Search.
+\subsection{Assumptions}
+\label{sec: assumptions} 
+%\item	What are the assumptions about the aims and objectives?
+\begin{itemize} 
+\item It is assumed that the application is to be used by adults and as such, no filtering of inappropriate language before they are displayed to other users in the chat rooms has been undertaken.
+\item The application will be displayed to the user in English.
+\end{itemize}
+
+%\item	Describe the design goals and objectives of the application.
+
+\subsection{Constraints}
+\label{sec: constraints} 
+%\item	What are the constraints of the project?
+\begin{itemize} 
+\item The Django web framework must be used to build the application
+\item The application must be completed within the time allotted for the DIM3 course
+\item The application is to be designed and implemented by 3 people.
+\end{itemize}
+
+\subsection{Reflections on scope and design goals}
+\begin{itemize}
 \item	Reflective Questions: 
 \item	Is the scope of the application appropriate? 
 \item	Are the design goals realistic/achievable? 
-\item	How complex is the application? 
-\item	Is distribution across the web appropriate? 
+\item	How complex is the application? %start with this one and lead into the above two questions. The web application is quite complex as it brings together a wide variety of web technologies {list some}. The file sharing is especially hard to implement. The scope of a basic chat system with functionality is feasible but other features may not be so. The functionality implemented is described in section {implmenetation notes}
+\item	Is distribution across the web appropriate? %this application is made for distribution over the web to allow many users from across the world to communicate with each other.
 \end{itemize}
 
 \section{Client Interface}
 \begin{itemize}
-\item	Draw a wireframe of the user interface
-\item	this may require several wireframes depending on the complexity of the application and the interfaces
-\item	Describe the user interface.
+\item	Draw a wireframe of the user interface %include the png of the main screen from moqups
+\item	this may require several wireframes depending on the complexity of the application and the interfaces %include 3 screenshots from the main thing
+\item	Describe the user interface. 
 \item	i.e. Label key input and output components: describe them.
-\item	Provide a Walkthrough and explain the user interactions with application. 
+\item	Provide a Walkthrough and explain the user interactions with application. %walkthrough of starting a public chat for a particular topic, finding a particular topic and starting a chat
 \item	i.e. use cases
-\item	Describe the interactions associated with the dynamic components on the user interface.
+\item	Describe the interactions associated with the dynamic components on the user interface. %the chat messages are dynamically updated.
 \item	What calls are required to dynamically update the data on the client side?
 \item	How does the user interface help the user achieve their goal, or complete their task? 
 \item	Is the user interface intuitive, appealing, usable, etc?
-\item	What technologies are used on the client side? 
-\item	What are the reasons for your choices? i.e. what is the advantages and disadvantages of using this technology? 
+\item	What technologies are used on the client side? %HTML CSS JS
+\item	What are the reasons for your choices? i.e. what is the advantages and disadvantages of using this technology? %popular web technologies supported by all main browsers
 \item	What other options are there? 
 \end{itemize}
 

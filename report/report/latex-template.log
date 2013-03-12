@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.26)  11 MAR 2013 23:21
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.26)  12 MAR 2013 08:25
 entering extended mode
  %&-line parsing enabled.
 **latex-template.tex
@@ -330,41 +330,40 @@ Overfull \hbox (6.83818pt too wide) in paragraph at lines 37--41
 rker
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--100
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--100
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--100
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--100
-
- []
-
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] (./latex-template.bbl
-[2]) [3
+]
+Underfull \hbox (badness 10000) in paragraph at lines 121--130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--130
+
+ []
+
+[2] (./latex-template.bbl) [3
 
 ] (./latex-template.aux) ) 
 Here is how much of TeX's memory you used:
- 2853 strings out of 495061
- 34997 string characters out of 1182621
- 96879 words of memory out of 3000000
- 5939 multiletter control sequences out of 15000+50000
- 49529 words of font info for 66 fonts, out of 3000000 for 9000
+ 2857 strings out of 495061
+ 35060 string characters out of 1182621
+ 96911 words of memory out of 3000000
+ 5942 multiletter control sequences out of 15000+50000
+ 50665 words of font info for 67 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 41i,12n,26p,413b,250s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,12n,26p,450b,250s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc
 }</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share
 /texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texliv
@@ -374,7 +373,7 @@ ic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></u
 sr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texli
 ve/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on latex-template.pdf (3 pages, 119439 bytes).
+Output written on latex-template.pdf (3 pages, 123362 bytes).
 PDF statistics:
  49 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
