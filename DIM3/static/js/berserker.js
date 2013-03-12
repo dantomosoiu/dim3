@@ -206,5 +206,9 @@ function createPublicChat(){
     Dajaxice.BerserkerChat.getPublicRoom(refreshMe, {'roomname': roomName});
 }
 
+function uploadAndShare(){
+
+}
+
 
 var csrftoken = getCookie('csrftoken');
