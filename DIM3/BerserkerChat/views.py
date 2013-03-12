@@ -43,6 +43,8 @@ def index(request):
 
     return render(request, 'BerserkerChat/index.html', {'room': Room.objects.get(slug=roomname), 'ROOMNAME': "BerserkerChat/chat/room/"+roomname, 'user': request.user, 'host': HOSTNAME, 'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
 
+def upgrade(request):
+    return render(request, 'BerserkerChat/upgrade.html')
 
 def register(request):
     context = RequestContext(request)
@@ -62,6 +64,7 @@ def register(request):
         uform = UserForm()
 
     return render_to_response('BerserkerChat/register.html', {'loggedin': request.user.is_authenticated(), 'uform': uform, 'registered': registered }, context)
+
 
 
 def save_file(file, path=''):

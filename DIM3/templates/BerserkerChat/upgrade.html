@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+{% load dajaxice_templatetags %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/berserker.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}/css/room.css">
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+
+    {% dajaxice_js_import %}
+
+
+    <title>Welcome to BerserkerChat</title>
+</head>
+
+<body data-request="{{ pageurl }}">
+
+<br/>
+<div class="contentBox">
+    <br/><br/>
+    <div class="refBox">
+        <p>I'm Afraid we have'nt got around to that yet. If you like our site please drop us an <a href="mailto:teamlmember@googlemail.com">Email </a></p>
+        <p><a href="/">Return to Homepage </a></p>
+    </div>
+
+
+
+    </div>
+    </div>
+</div>
+
+<div id="footer">
+    <a href="http://www.freedomain.co.nr/" target="_blank"><img src="{{ STATIC_URL }}imgs/blue.gif" width="88"
+                                                                height="31" border="0"
+                                                                alt="Free Domain Name - www.YOU.co.nr!"></a>
+    <br/>
+    <a href="mailto:teamlmember@googlemail.com"> Berserker Chat &#174; </a>
+</div>
+
+</body>
+</html>

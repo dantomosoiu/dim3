@@ -4,8 +4,7 @@ from dajaxice.decorators import dajaxice_register
 from chatrooms.models import Room
 from django.shortcuts import render
 import random, string
-from chatrooms.utils.decorators import room_check_access
-from chatrooms import views
+
 
 
 @dajaxice_register
@@ -14,21 +13,15 @@ def getPrivateRoom(request):
     new_name = ''.join(random.choice(string.ascii_lowercase) for x in range(2))+str(rooms.count())
     r = Room(name=new_name, slug=new_name, allow_anonymous_access=True)
     r.save()
-    r = Room.objects.get(slug=new_name)
-    t = loader.get_template('chatrooms/room.html')
 
     return simplejson.dumps({'name': new_name})
 
 @dajaxice_register
 def getPublicRoom(request, roomname):
-    rooms = Room.objects.all()
-    new_name = ''.join(random.choice(string.ascii_lowercase) for x in range(2))+str(rooms.count())
-    r = Room(name=new_name, slug=new_name, allow_anonymous_access=True)
-    r.save()
-    r = Room.objects.get(slug=new_name)
-    t = loader.get_template('chatrooms/room.html')
-
-    return simplejson.dumps({'name': new_name})
+    r, created = Room.objects.get_or_create(name=roomname, slug=roomname, allow_anonymous_access=True)
+    if (created):
+        r.save()
+    return simplejson.dumps({'name': roomname})
 
 
 @dajaxice_register

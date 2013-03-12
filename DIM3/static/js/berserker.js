@@ -202,7 +202,7 @@ function createPrivateChat(){
 
 
 function createPublicChat(){
-    var roomName=document.forms["new-public-form"]["create-public-chat-subject"].value;
+    var roomName=document.forms["new-public-form"]["create-public-chat-subject"].value.replace(/ /g,"_").toLowerCase().replace(/[^\w\s]|/g, "").substring(0,60);
     Dajaxice.BerserkerChat.getPublicRoom(refreshMe, {'roomname': roomName});
 }
 
