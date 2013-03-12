@@ -96,8 +96,11 @@ def Categories(request):
 
 def Recent(request):
     #returns a list of rooms. need to sort by lastVisit and inject x into template using some kind of for loop
-    rooms = UserRooms.objects.get(user=request.user)
+    rooms = UserRooms.objects.filter(user=request.user)
+    rooms.order_by('lastVisit')
+    if (rooms.count < 10):
+        x = rooms.count
+    else:
+        x = 10
 
-
-
-    return render(request, 'chatrooms/Recent.html')
+    return render(request, 'chatrooms/Recent.html', {'rooms': rooms })
