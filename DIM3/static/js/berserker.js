@@ -83,6 +83,7 @@ $(document).ready(function () {
         if(!element.data('cache'))
         {
             /* If no cache is present, show the gif preloader and run an AJAX request: */
+            var loadImgLoc = "<img src=".concat("http://".concat(getHostname().hostname).concat("static/img/ajax_preloader.gif")).concat(" width=\"64\" height=\"64\" class=\"preloader\" />");
             $('#contentHolder').html('<img src="static/img/ajax_preloader.gif" width="64" height="64" class="preloader" />');
 
             $.get(href,function(msg){

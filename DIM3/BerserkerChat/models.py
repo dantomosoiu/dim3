@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.forms import ModelForm
+from django.forms import ModelForm, PasswordInput
 
 class UserProfile(models.Model):
     # This field is required.
@@ -16,7 +16,7 @@ class UserProfile(models.Model):
 class UserForm(ModelForm):
     class Meta:
         model = User
-        fields = ["username", "email", "password"]
+        fields = ["username", "email"]
 
 class UserProfileForm(ModelForm):
     class Meta:

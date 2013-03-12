@@ -51,8 +51,7 @@ def register(request):
         uform = UserForm(data = request.POST)
         if uform.is_valid():
             user = uform.save()
-            # form brings back a plain text string, not an encrypted password
-            pw = user.password
+            pw = request.POST['password']
             # thus we need to use set password to encrypt the password string
             user.set_password(pw)
             user.save()

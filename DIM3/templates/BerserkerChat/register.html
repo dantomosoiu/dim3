@@ -34,82 +34,15 @@
             <FORM id="user_form" method="post" action="/BerserkerChat/register/" enctype="multipart/form-data" >
                 {% csrf_token %}
                 {{ uform.as_p }}
+                <br/>
+                <input type="password" placeholder="Password" name="password"/>
+                <br/>
                 <INPUT type="submit" name="submit" value="submit" />
             </FORM>
         {% endif %}
     </div>
 
-    {% if user.is_authenticated %}
-        <div id="left-pane" data-name='{{ user.username }}'>
-    {% else %}
-        <div id="left-pane" data-name=''>
-    {% endif %}
-    <p>Do you have someone with whom you need to talk in private or send a file? Just click below and pass him the
-        link that appears in the browser!</p>
-    <form id="new-private-form">
-        <input type="button" value="Create private chat" onclick="createPrivateChat()"/>
-    </form>
-    <hr/>
 
-    <p>Want to talk to a complete stranger ?
-        Choose to create or join a random chat room and we'll quickly pair you with a partner. If you want to talk
-        about a certain subject, we'll do our best to find you a match!</p>
-
-    <form id="new-public-form">
-        <p>Enter a topic here: </p>
-        <textarea cols="10" id="create-public-chat-subject" rows="4" name="public-chat-subject">Looking for someone interested in talking about cats!</textarea>
-        <input type="button" value="Create Public chat" onclick="createPublicChat()"/>
-    </form>
-    </div>
-
-
-
-    <div id="right-pane">
-        {% if loggedin %}
-            <div id="right-pane-account-holder"><p>You are signed in as <a
-                    href="/BerserkerChat/MyAccount"> {{ user.username }} </a></p></div>
-            <a href="/logout"> <input type="button" value="Sign Out" id="sign-out-button"> </a>
-        {% else %}
-            {% if invalidAttempt %} Invalid Username or Password<br/>{% endif %}
-            <form id="login-form" method="post" action="/">
-                {% csrf_token %}
-                <input type="text" placeholder="Username" name="username"/>
-                <br/>
-                <input type="password" placeholder="Password" name="password"/>
-                <br/>
-                <input type="submit" value="Submit" id="submit-login">
-
-                <a href="/google/login">
-                    <img id="google-login" src="/static/imgs/google.png" alt="Log In With Google"></a>
-            </form>
-
-        {% endif %}
-
-
-        <div id="ad-container">
-            <script type="text/javascript">
-                sa_client = "cb5b87c76c7debf5d89778c848540e04";
-                sa_code = "c51b8f50a89033f6cf2ed62567e50659";
-                sa_protocol = ("https:" == document.location.protocol) ? "https" : "http";
-                sa_pline = "0";
-                sa_maxads = "3";
-                sa_bgcolor = "FFFFFF";
-                sa_bordercolor = "DDDDFF";
-                sa_superbordercolor = "DDDDFF";
-                sa_linkcolor = "000080";
-                sa_desccolor = "000000";
-                sa_urlcolor = "008000";
-                sa_b = "0";
-                sa_format = "column_120x240";
-                sa_width = "120";
-                sa_height = "360";
-                sa_location = "0";
-                sa_radius = "4";
-                sa_borderwidth = "1";
-                sa_font = "0";
-                document.write(unescape("%3cscript type='text/javascript' src='" + sa_protocol + "://sa.entireweb.com/sense.js'%3e%3c/script%3e"));
-            </script>
-        </div>
 
     </div>
     </div>
