@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.26)  12 MAR 2013 20:16
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.26)  12 MAR 2013 21:16
 entering extended mode
  %&-line parsing enabled.
 **dim3-berserkerchat.tex
@@ -345,7 +345,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--107
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
@@ -356,90 +356,134 @@ Underfull \hbox (badness 10000) in paragraph at lines 109--110
 <wireframe_num.jpg, id=12, 963.6pt x 632.3625pt>
 File: wireframe_num.jpg Graphic file (type jpg)
  <use wireframe_num.jpg>
-Overfull \hbox (9.89941pt too wide) in paragraph at lines 111--112
+Overfull \hbox (9.89941pt too wide) in paragraph at lines 113--115
 [][] 
  []
 
-<n-tier-arch.png, id=13, 883.3pt x 192.72pt>
-File: n-tier-arch.png Graphic file (type png)
- <use n-tier-arch.png>
-Overfull \hbox (33.99205pt too wide) in paragraph at lines 144--152
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
+ []
+
+<categories-browsing_1.jpg, id=13, 962.09438pt x 469.00218pt>
+File: categories-browsing_1.jpg Graphic file (type jpg)
+
+<use categories-browsing_1.jpg>
+<chat-user_2.jpg, id=14, 963.6pt x 517.18219pt>
+File: chat-user_2.jpg Graphic file (type jpg)
+ <use chat-user_2.jpg>
+<public-joined_3.jpg, id=15, 963.6pt x 513.41812pt>
+File: public-joined_3.jpg Graphic file (type jpg)
+ <use public-joined_3.jpg>
+<recent_4.jpg, id=16, 963.6pt x 515.67656pt>
+File: recent_4.jpg Graphic file (type jpg)
+ <use recent_4.jpg>
+Overfull \hbox (19.13864pt too wide) in paragraph at lines 129--133
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--152
+Overfull \hbox (10.53009pt too wide) in paragraph at lines 129--133
+[]
+ []
+
+
+Overfull \hbox (10.53009pt too wide) in paragraph at lines 129--133
+[]
+ []
+
+
+Overfull \hbox (10.53009pt too wide) in paragraph at lines 129--133
+[] 
+ []
+
+
+Underfull \vbox (badness 2368) has occurred while \output is active []
+
+ [2 <./wireframe_num.jpg> <./categories-browsing_1.jpg> <./chat-user_2.jpg> <./
+public-joined_3.jpg> <./recent_4.jpg>] <n-tier-arch.png, id=20, 883.3pt x 192.7
+2pt>
+File: n-tier-arch.png Graphic file (type png)
+
+<use n-tier-arch.png>
+Overfull \hbox (25.15044pt too wide) in paragraph at lines 169--177
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--152
+Underfull \hbox (badness 10000) in paragraph at lines 169--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--152
+Underfull \hbox (badness 10000) in paragraph at lines 169--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--152
+Underfull \hbox (badness 10000) in paragraph at lines 169--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--152
-
- []
-
-[2 <./wireframe_num.jpg> <./n-tier-arch.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 168--169
+Underfull \hbox (badness 10000) in paragraph at lines 169--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
-<postmessage.png, id=18, 572.1375pt x 351.3125pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
+
+ []
+
+[3 <./n-tier-arch.png (PNG copy)>]
+<postmessage.png, id=25, 572.1375pt x 351.3125pt>
 File: postmessage.png Graphic file (type png)
  <use postmessage.png>
-Underfull \vbox (badness 2384) has occurred while \output is active []
-
-
-<getmessage.png, id=19, 572.1375pt x 351.3125pt>
+<getmessage.png, id=26, 572.1375pt x 351.3125pt>
 File: getmessage.png Graphic file (type png)
- <use getmessage.png> [3 <./postmessage.png (PNG copy)> <./getmessage.png (PNG 
-copy)>]
+ <use getmessage.png>
 No file dim3-berserkerchat.bbl.
-[4
-
-] (./dim3-berserkerchat.aux) ) 
+[4 <./postmessage.png (PNG copy)> <./getmessage.png (PNG copy)>]
+(./dim3-berserkerchat.aux) ) 
 Here is how much of TeX's memory you used:
- 2869 strings out of 495061
- 35360 string characters out of 1182621
- 94908 words of memory out of 3000000
- 5954 multiletter control sequences out of 15000+50000
- 47046 words of font info for 63 fonts, out of 3000000 for 9000
+ 2890 strings out of 495061
+ 35798 string characters out of 1182621
+ 95908 words of memory out of 3000000
+ 5970 multiletter control sequences out of 15000+50000
+ 48182 words of font info for 64 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  41i,12n,26p,571b,250s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r
-.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/fonts/
-type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helveti
-c/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/s
-hare/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/f
-onts/type1/urw/times/utmri8a.pfb>
-Output written on dim3-berserkerchat.pdf (4 pages, 460625 bytes).
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.e
+nc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/
+uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/sha
+re/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fon
+ts/type1/urw/times/utmri8a.pfb>
+Output written on dim3-berserkerchat.pdf (4 pages, 1186077 bytes).
 PDF statistics:
- 52 PDF objects out of 1000 (max. 8388607)
+ 56 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
