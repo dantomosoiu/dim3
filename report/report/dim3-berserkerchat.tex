@@ -9,7 +9,7 @@
 \usepackage{colortbl}
 \usepackage{multirow}
 \usepackage{booktabs}
-\usepackage{ifthen}  
+\usepackage{ifthen}
 
 \begin{document}
 \newcommand{\todo}[1]{\textcolor{red}{#1}}
@@ -48,19 +48,19 @@ chat environment, not dissimilar to other chat applications which the user may h
 \subsection{Goals and Objectives}
 \label{sec: goals}
 The main goals and objectives are listed below:
-\begin{itemize}
+\begin{enumerate}
 \item Anonymous use of the application to chat with others in public chat rooms
 \item Ability for a logged-in user to have a private chat with another logged-in user
 \item Public chat rooms based on category/interests, e.g. public chat room for users interested in photography
 \item Creation of public chat rooms based on interest which allow other people to find the created room, join and chat
 \item Ability for file sharing between users -- files are uploaded and can be downloaded by other users 
-\end{itemize}
+\end{enumerate}
 
-\subsubsection{Functionality}
+\subsection{Functionality}
 \label{sec: functionality}
 %\item Functionality List: i.e. what is the required and desired functionality?
 More specifically, the desired functionality of the web application is as follows:
-\begin{itemize}
+\begin{enumerate}
 \item Allow user to login and logout
 \item Start a public chat
 \item Start a private chat
@@ -68,7 +68,7 @@ More specifically, the desired functionality of the web application is as follow
 \item Allow user to filter chats specifically by searching for a category
 \item A display of the recent chats that the user has been involved in
 \item A file sharing interface in the chat room for users to share files with each other
-\end{itemize}
+\end{enumerate}
 %\begin{itemize}
 %\item	What is the purpose of the application?
 %\item	Eg. The application is an academic search engine called AcaSe and is it is based upon the PuppyIR Framework\cite{glassey2011framework}, which has been used to construct other such services\cite{glassey2010fifi,elliot2010fifi}. The main purpose of this web application is to provide a customized interface to services such as Google Scholar and MS Academic Search.
@@ -92,17 +92,37 @@ More specifically, the desired functionality of the web application is as follow
 \end{itemize}
 
 \subsection{Reflections on scope and design goals}
-\begin{itemize}
-\item	Reflective Questions: 
-\item	Is the scope of the application appropriate? 
-\item	Are the design goals realistic/achievable? 
-\item	How complex is the application? %start with this one and lead into the above two questions. The web application is quite complex as it brings together a wide variety of web technologies {list some}. The file sharing is especially hard to implement. The scope of a basic chat system with functionality is feasible but other features may not be so. The functionality implemented is described in section {implmenetation notes}
-\item	Is distribution across the web appropriate? %this application is made for distribution over the web to allow many users from across the world to communicate with each other.
-\end{itemize}
+This application has considerable complexity, particularly in the methods which have to be used to achieve as close to instantaneous display of messages as they are sent by the user. The categorisation of chat rooms, adds to the complexity, as does the file sharing capability. \\
+
+The team feels that the design goals are realistic for the most part. The functionality for users to chat to each other in different chat rooms is realistic and achievable. The only part which may not be implemented is the file sharing capability. The actual functionality implemented is discussed in Section~\ref{sec: implementation}. \\
+
+This type of application is wholly suitable for distribution across the web. By distributing it over the web, anyone with access to an internet browser can use it to communicate with other people across the world. Furthermore, the categorisation of chat rooms allows people to talk to other like-minded people with similar interests. \\
+%\begin{itemize}
+%\item	Reflective Questions: 
+%\item	Is the scope of the application appropriate? 
+%\item	Are the design goals realistic/achievable? 
+%\item	How complex is the application? %start with this one and lead into the above two questions. The web application is quite complex as it brings together a wide variety of web technologies {list some}. The file sharing is especially hard to implement. The scope of a basic chat system with functionality is feasible but other features may not be so. The functionality implemented is described in section {implmenetation notes}
+%\item	Is distribution across the web appropriate? %this application is made for distribution over the web to allow many users from across the world to communicate with each other.
+%\end{itemize}
 
 \section{Client Interface}
+The wireframe of the user interface of the main screen is shown below:\\
+
+\includegraphics[scale=0.25]{wireframe_num.jpg}
+
+\begin{enumerate}
+\item This allows the user to create a private chat. When the `create private chat' button is clicked, a link appears in the browser which the user can click to redirect them to the correct chat room. The private chat link can be passed to others: only those with the link can chat in that specific chat room. 
+\item This allows the user to start a public chat. When the `start public chat' button is clicked the user is redirected to a random public chat room. If the user specifies a topic, then the user is redirected to a room for that topic, if it exists. If it does not exist, the room for the topic is created and the user can invite others to join, or wait for other people with the same interest to join.
+\item todo
+\item todo
+\item todo
+\item todo
+\end{enumerate}
+
+%include screenshots of the real thing and compare and contrast. Basically the real thing is quite close to the wireframe but some things have been simplified for example we can only go down on level in the categories and not two. Also categories and most recent/popular has been introduced.
+
 \begin{itemize}
-\item	Draw a wireframe of the user interface %include the png of the main screen from moqups
+%\item	Draw a wireframe of the user interface %include the png of the main screen from moqups
 \item	this may require several wireframes depending on the complexity of the application and the interfaces %include 3 screenshots from the main thing
 \item	Describe the user interface. 
 \item	i.e. Label key input and output components: describe them.
@@ -114,13 +134,15 @@ More specifically, the desired functionality of the web application is as follow
 \item	Is the user interface intuitive, appealing, usable, etc?
 \item	What technologies are used on the client side? %HTML CSS JS
 \item	What are the reasons for your choices? i.e. what is the advantages and disadvantages of using this technology? %popular web technologies supported by all main browsers
-\item	What other options are there? 
+\item	What other options are there? %HTML5 
 \end{itemize}
 
 \section{Application Architecture}
 The application is designed to use a 3-tier architecture as illustrated in the diagram below. Using this type of architecture allows
 a separation of concerns between the display of the content on the client browser, the web application framework, and the backend.
-The 3-tier architecture consists of: \\
+
+\includegraphics[scale=0.3]{n-tier-arch.png}
+The 3-tier architecture consists of: \\\\ 
 \textbf{Client} \\
 The client (user) interacts with the Berserker Chat application through a web browser\\ \\
 \textbf{Middleware} \\
@@ -159,6 +181,7 @@ The database stores information about the models which can be requested by the m
 
 
 \section{Implementation Notes}
+\label{sec: implementation}
 
 \begin{itemize}
 \item Views - What are the main views that you have implemented and what do they do?
