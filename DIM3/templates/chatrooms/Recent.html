@@ -8,13 +8,10 @@
     <div id="recent-rooms-holder">
 
     <p>here be a list of recent rooms used by the user</p>
-    <p>ideally self updating, informing if new messages appeared</p>
+        {% for room in rooms %}
+            <a href="room/{{ room.room.slug }}"> {{ room.room.name }} </a><br/>
 
-
-    <ul class="subcategory-list list-active">
-        <li class="room-list-element"><a href="/room/compsci">Computer Science</a></li>
-        <li class="room-list-element"><a href="/room/sport">Sport (5)</a></li>
-    </ul>
+        {% endfor %}
 
     </div>
 
