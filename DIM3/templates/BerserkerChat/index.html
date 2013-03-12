@@ -6,6 +6,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
+    <script type="text/javascript">
+        var STATIC_URL = {{ STATIC_URL }};
+    </script>
+
     <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
 
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/berserker.css"/>
@@ -77,7 +81,7 @@
         <div id="left-pane" data-name=''>
     {% endif %}
 
-    <img src="static/imgs/logo.png" alt="Berserker Chat" title="Berserker Chat" />
+    <img src="{{ STATIC_URL }}/imgs/logo.png" alt="Berserker Chat" title="Berserker Chat" />
 
 
     <p>Do you have someone with whom you need to talk in private or send a file? Just click below and pass him the
