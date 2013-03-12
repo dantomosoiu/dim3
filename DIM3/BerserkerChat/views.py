@@ -15,10 +15,15 @@ from datetime import datetime
 def index(request):
     HOSTNAME =  request.get_host() + "/"
     roomname = request.path
+
     if (roomname == "/"):
         roomname = "room"
     else:
         roomname = roomname.rsplit('/', 1)[1]
+
+    r, created = Room.objects.get_or_create(name=roomname, slug=roomname, allow_anonymous_access=True)
+    if (created):
+        r.save()
     loggedin = False
     print roomname
     invalidAttempt = False
