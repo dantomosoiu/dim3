@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.26)  12 MAR 2013 19:33
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.9.26)  12 MAR 2013 20:16
 entering extended mode
  %&-line parsing enabled.
 **dim3-berserkerchat.tex
@@ -407,27 +407,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
+<postmessage.png, id=18, 572.1375pt x 351.3125pt>
+File: postmessage.png Graphic file (type png)
+ <use postmessage.png>
+Underfull \vbox (badness 2384) has occurred while \output is active []
+
+
+<getmessage.png, id=19, 572.1375pt x 351.3125pt>
+File: getmessage.png Graphic file (type png)
+ <use getmessage.png> [3 <./postmessage.png (PNG copy)> <./getmessage.png (PNG 
+copy)>]
 No file dim3-berserkerchat.bbl.
-[3] (./dim3-berserkerchat.aux) ) 
+[4
+
+] (./dim3-berserkerchat.aux) ) 
 Here is how much of TeX's memory you used:
- 2859 strings out of 495061
- 35177 string characters out of 1182621
- 95908 words of memory out of 3000000
- 5946 multiletter control sequences out of 15000+50000
+ 2869 strings out of 495061
+ 35360 string characters out of 1182621
+ 94908 words of memory out of 3000000
+ 5954 multiletter control sequences out of 15000+50000
  47046 words of font info for 63 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  41i,12n,26p,571b,250s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/
-8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr
-/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/font
-s/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helve
-tic/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr
-/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive
-/fonts/type1/urw/times/utmri8a.pfb>
-Output written on dim3-berserkerchat.pdf (3 pages, 441911 bytes).
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r
+.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/s
+hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/fonts/
+type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helveti
+c/uhvr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/s
+hare/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/f
+onts/type1/urw/times/utmri8a.pfb>
+Output written on dim3-berserkerchat.pdf (4 pages, 460625 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
+ 52 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
