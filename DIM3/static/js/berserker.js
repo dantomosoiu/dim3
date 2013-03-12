@@ -207,4 +207,72 @@ function createPublicChat(){
 }
 
 
+function uploadAndShare(){
+    var response;
+    //asume i got  a response;
+
+    response = STATIC_URL + "imgs/logo.png";
+    //addUploadedToChat("http://www.gravatar.com/avatar/76a8dbe7afd167f6f810b4c7708f858e?s=32&d=identicon&r=PG");
+    addUploadedToChat(response);
+}
+
+function addUploadedToChat(address){
+    var image = 0;
+    var suffix = "jpg";
+    if( address.indexOf("jpg", address.length - suffix.length) !== -1){
+        image = 1;
+    }
+    if( address.indexOf("jpeg", address.length - suffix.length) !== -1){
+        image = 1;
+    }
+    if( address.indexOf("png", address.length - suffix.length) !== -1){
+        image = 1;
+    }
+    if( address.indexOf("gif", address.length - suffix.length) !== -1){
+        image = 1;
+    }
+
+    var Context = getContext();
+
+    if(image == 1){
+
+
+        $.ajax({
+            url: '/chat/send_message/',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                "username": Context.username,
+                "room_id": Context.room_id,
+                "message": "<img src='" + address + "'/>"
+            },
+            success: function() { $('#chatSendText').val("") },
+            error: function() {  },
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader('X-CSRFToken', csrftoken);}
+        });
+    }
+    else {
+
+        $.ajax({
+            url: '/chat/send_message/',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                "username": Context.username,
+                "room_id": Context.room_id,
+                "message": "<a href=\"" + address +"\">" + address + "<a/>"
+            },
+            success: function() { },
+            error: function() {  },
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader('X-CSRFToken', csrftoken);}
+        });
+
+    }
+}
+
+
+
+
 var csrftoken = getCookie('csrftoken');
