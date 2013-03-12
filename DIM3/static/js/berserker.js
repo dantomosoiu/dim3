@@ -10,7 +10,7 @@ $(document).ready(function () {
     //checkRoomRequest();
 
     var Tabs = {
-	        'Categorised'   : 'BerserkerChat/Categories',
+	        'Categories'   : 'BerserkerChat/Categories',
 	        'Recent'   : 'BerserkerChat/Recent',
 	        'Chat' : 'BerserkerChat/room/room'
 	    }
