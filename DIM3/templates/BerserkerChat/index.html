@@ -6,6 +6,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
+    <script type="text/javascript">
+        var STATIC_URL = {{ STATIC_URL }};
+    </script>
+
     <link href="{{ STATIC_URL }}css/bootstrap.min.css" rel="stylesheet" media="screen">
 
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/berserker.css"/>
@@ -78,7 +82,7 @@
         <div id="left-pane" data-name=''>
     {% endif %}
 
-    <img src="static/imgs/logo.png" alt="Berserker Chat" title="Berserker Chat" />
+    <img src="{{ STATIC_URL }}/imgs/logo.png" alt="Berserker Chat" title="Berserker Chat" />
 
 
     <p>Do you have someone with whom you need to talk in private or send a file? Just click below and pass him the
@@ -104,7 +108,7 @@
     <div id="right-pane">
         {% if loggedin %}
             <div id="right-pane-account-holder"><p>You are signed in as <a
-                    href="/BerserkerChat/MyAccount"> {{ user.username }} </a></p></div>
+                    href="/BerserkerChat/myaccount"> {{ user.username }} </a></p></div>
             <a href="/logout"> <input class="btn" type="button" value="Sign Out" id="sign-out-button"> </a>
         {% else %}
             {% if invalidAttempt %} Invalid Username or Password<br/>{% endif %}
