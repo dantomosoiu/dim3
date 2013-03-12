@@ -46,6 +46,11 @@ $(document).ready(function () {
 
         /* If it is currently active, return false and exit: */
         if(element.find('#overLine').length) return false;
+        if(element.is(the_tabs.eq(0))) {
+            $("#category-filter").show();
+        }else {
+            $("#category-filter").hide();
+        }
         if(element.is(the_tabs.eq(2))) {
             if( $("#left-pane").attr("data-name") == "" ) {
                 name = prompt("Please Enter a Screen Name");
