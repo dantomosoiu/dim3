@@ -23,10 +23,7 @@ def getPublicRoom(request, roomname):
         r.save()
     return simplejson.dumps({'name': roomname})
 
-def createRoom(request, room):
-    r, created = Room.objects.get_or_create(name=roomname, slug=roomname, allow_anonymous_access=True)
-    if (created):
-        r.save()
+
 
 @dajaxice_register
 def getRoom(request, name, room):
