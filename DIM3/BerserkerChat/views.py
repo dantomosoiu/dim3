@@ -46,6 +46,9 @@ def index(request):
 def upgrade(request):
     return render(request, 'BerserkerChat/upgrade.html')
 
+def myaccount(request):
+    return render(request, 'BerserkerChat/myaccount.html')
+
 def register(request):
     context = RequestContext(request)
     registered = False
