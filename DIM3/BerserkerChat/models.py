@@ -17,8 +17,8 @@ class UserProfile(models.Model):
 
 class UserRooms(models.Model):
     # This field is required.
-    user = models.ForeignKey(User)
-    room = models.ForeignKey(Room)
+    user = models.TextField()
+    sib = models.ForeignKey(Room)
     count = models.PositiveIntegerField(default=0)
     lastVisit = models.DateTimeField(default=datetime.now())
 

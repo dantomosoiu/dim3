@@ -93,7 +93,7 @@ $(document).ready(function () {
 
             });
         }
-        else $('#contentHolder').html(element.data('cache'));
+
 
         roomName = getHostname().roomname;
 

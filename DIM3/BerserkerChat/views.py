@@ -10,6 +10,7 @@ from django.shortcuts import render_to_response, render
 from DIM3.settings import MEDIA_ROOT
 from chatrooms.models import Room
 from datetime import datetime
+import random, string
 
 
 def index(request):
@@ -24,6 +25,12 @@ def index(request):
     r, created = Room.objects.get_or_create(name=roomname, slug=roomname, allow_anonymous_access=True)
     if (created):
         r.save()
+
+    if request.user.is_authenticated():
+        name = request.user.username
+    else:
+        name = ''.join(random.choice(string.ascii_lowercase) for x in range(10))
+
     loggedin = False
     print roomname
     invalidAttempt = False
@@ -47,14 +54,16 @@ def index(request):
     elif request.user.is_authenticated():
         loggedin = True
 
-#    r, created = UserRooms.objects.get_or_create(user=request.user, room=Room.objects.get(slug=roomname))
-#    if (created):
-#        r.count = r.count + 1
-#        r.save()
-#    else:
-#        r.count += 1
-#        r.lastVisit = datetime.now()
-#        r.save()
+#if request.user.is_authenticated():
+    r, created = UserRooms.objects.get_or_create(user=name, room=Room.objects.get(slug=roomname))
+    if (created):
+        r.count = r.count + 1
+        r.save()
+    else:
+        r.count += 1
+        r.lastVisit = datetime.now()
+        r.save()
+
 
     return render(request, 'BerserkerChat/index.html', {'room': Room.objects.get(slug=roomname), 'ROOMNAME': "BerserkerChat/chat/room/"+roomname, 'user': request.user, 'host': HOSTNAME, 'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
 
@@ -106,11 +115,11 @@ def Recent(request):
     if request.user.is_authenticated():
         rooms = UserRooms.objects.filter(user=request.user)
     else:
-        rooms = UserRooms.objects.all()
-    rooms.order_by('lastVisit')
-    if (rooms.count < 10):
-        x = rooms.count
-    else:
-        x = 10
-
-    return render(request, 'chatrooms/Recent.html', {'rooms': rooms })
+        rooms = UserRooms.objects.order_by('lastVisit')
+    d = {}
+    for room in rooms:
+        d[room.room.name] = room.room.name
+        print len(d)
+        if len(d) == 10:
+            break
+    return render(request, 'chatrooms/Recent.html', {'rooms': d })
