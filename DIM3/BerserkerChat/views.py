@@ -41,14 +41,16 @@ def index(request):
             return render(request, 'BerserkerChat/index.html', {'room': Room.objects.get(slug=roomname), 'ROOMNAME': "BerserkerChat/chat/room/"+roomname, 'user': request.user, 'host': HOSTNAME, 'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
     elif request.user.is_authenticated():
         loggedin = True
-    r, created = UserRooms.objects.get_or_create(user=request.user, room=Room.objects.get(slug=roomname))
-    if (created):
-        r.count = r.count + 1
-        r.save()
-    else:
-        r.count += 1
-        r.lastVisit = datetime.now()
-        r.save()
+
+#    r, created = UserRooms.objects.get_or_create(user=request.user, room=Room.objects.get(slug=roomname))
+#    if (created):
+#        r.count = r.count + 1
+#        r.save()
+#    else:
+#        r.count += 1
+#        r.lastVisit = datetime.now()
+#        r.save()
+
     return render(request, 'BerserkerChat/index.html', {'room': Room.objects.get(slug=roomname), 'ROOMNAME': "BerserkerChat/chat/room/"+roomname, 'user': request.user, 'host': HOSTNAME, 'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
 
 def upgrade(request):
