@@ -4,12 +4,13 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from BerserkerChat.models import UserProfile
-from BerserkerChat.models import UserForm, UserProfileForm, loginForm
+from BerserkerChat.models import UserForm, UserRooms
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, render
 from DIM3.settings import MEDIA_ROOT
 from chatrooms.models import Room
-import string, random
+from datetime import datetime
+
 
 def index(request):
     HOSTNAME =  request.get_host() + "/"
@@ -40,7 +41,14 @@ def index(request):
             return render(request, 'BerserkerChat/index.html', {'room': Room.objects.get(slug=roomname), 'ROOMNAME': "BerserkerChat/chat/room/"+roomname, 'user': request.user, 'host': HOSTNAME, 'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
     elif request.user.is_authenticated():
         loggedin = True
-
+    r, created = UserRooms.objects.get_or_create(user=request.user, room=Room.objects.get(slug=roomname))
+    if (created):
+        r.count = r.count + 1
+        r.save()
+    else:
+        r.count += 1
+        r.lastVisit = datetime.now()
+        r.save()
     return render(request, 'BerserkerChat/index.html', {'room': Room.objects.get(slug=roomname), 'ROOMNAME': "BerserkerChat/chat/room/"+roomname, 'user': request.user, 'host': HOSTNAME, 'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
 
 def upgrade(request):
@@ -78,10 +86,15 @@ def save_file(file, path=''):
 def user_logout(request):
     context=RequestContext(request)
     logout(request)
-
+    return HttpResponseRedirect("/")
 
 def Categories(request):
     return render(request, 'chatrooms/Categories.html')
 
 def Recent(request):
+    #returns a list of rooms. need to sort by lastVisit and inject x into template using some kind of for loop
+    rooms = UserRooms.objects.get(user=request.user)
+
+
+
     return render(request, 'chatrooms/Recent.html')
