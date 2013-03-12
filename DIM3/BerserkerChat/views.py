@@ -37,7 +37,7 @@ def index(request):
             # Return an 'invalid login' error message.
             invalidAttempt = True
             print  "Invalid Password or Username " + username + " Does not exist"
-            return render(request, 'BerserkerChat/index.html', {'room': Room.objects.get(slug=roomname.rsplit('/', 1)[1]), 'ROOMNAME': roomname, 'user': request.user, 'host': HOSTNAME, 'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
+            return render(request, 'BerserkerChat/index.html', {'room': Room.objects.get(slug=roomname), 'ROOMNAME': "BerserkerChat/chat/room/"+roomname, 'user': request.user, 'host': HOSTNAME, 'loggedin': loggedin, 'invalidAttempt': invalidAttempt })
     elif request.user.is_authenticated():
         loggedin = True
 
