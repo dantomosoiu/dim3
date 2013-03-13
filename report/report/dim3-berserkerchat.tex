@@ -28,7 +28,7 @@
 \affaddr{Berserker}\\
 \affaddr{DIM3}\\
 \affaddr{Student numbers}\\
-\email{\{1102486T, 1102266L, 1007414G\}@student.gla.ac.uk }
+\email{\{1102486T, 1102266L, 1007414G\}@student.gla.ac.uk}
 }
 \maketitle
 
@@ -36,7 +36,7 @@
 %Provide a concise summary of the design of the application
 This report details the design and implementation of Berserker Chat --
 a web-based instant messenger and file sharing application which allows many users to
-collaboratively chat and share files. Berserker Chat is built using the Django Web Framework
+collaboratively chat and share files. Berserker Chat is built using the Django Web Framework\cite{django}
 which is written in the Python programming language.
 
 \end{abstract}
@@ -108,7 +108,7 @@ This type of application is wholly suitable for distribution across the web. By 
 \section{Client Interface}
 
 \subsection{Wireframe}
-The wireframe of the user interface of the main screen is shown below.\\
+The wireframe of the user interface of the main screen is shown below. This \\
 
 \includegraphics[scale=0.25]{wireframe_num.jpg}
 \\
@@ -127,40 +127,52 @@ The wireframe of the user interface of the main screen is shown below.\\
 Some screenshots are shown below of the client interface implemented in Berserker Chat.\\
 
 \includegraphics[scale=0.26]{categories-browsing_1.jpg}
+\textbf{Main screen and category browsing}\\
+
 \includegraphics[scale=0.26]{chat-user_2.jpg}
+\textbf{The main chat functionality} \\
 \includegraphics[scale=0.26]{public-joined_3.jpg}
+\textbf{Join a public chat room} \\
 \includegraphics[scale=0.26]{recent_4.jpg}
+\textbf{Recent view} \\
 
 \subsubsection{Description of numbered items}
 \begin{enumerate}
-\item This allows the user to create a private chat. When the `create private chat' button is clicked, a link appears in the browser which the user can click to redirect them to the correct chat room. The private chat link can be passed to others: only those with the link can chat in that specific chat room. 
-\item This allows the user to start a public chat. When the `start public chat' button is clicked the user is redirected to a random public chat room. If the user specifies a topic, then the user is redirected to a room for that topic, if it exists. If it does not exist, the room for the topic is created and the user can invite others to join, or wait for other people with the same interest to join.
-\item This shows the list of public chats and the name of the person who started it. Clicking on a particular chat subject takes the user into that chatroom. 
-\item The featured tab shows the chats which have had the most users and are therefore very popular. This allows the user to see what the main topics of chat are.
-\item A tab shows the chats the user is currently participating in with a pop-up of the most recently received message.
 \item Allows the user to login and logout of the site
-\item Allows the user to login and logout of the site
-\item Allows the user to login and logout of the site
-\item Allows the user to login and logout of the site
+\item Allows the creation of a private chat room. A randomly generated link is created and passed to the user through the browser. The user can click the `chat' tab to start chatting in the private room. The private chat link can be passed to others: only those with the link can chat in that specific chat room. 
+\item Allows the creation of  a public chat room. If the user specifies a topic, then the user is entered into a room for that topic, if it exists. If it does not exist, the room for the topic is created and the user can invite others to join, or wait for other people with the same interest to join.
+\item This a list of categories and subcategories. The user can click on one of the links to enter a chat room.
+\item This allows the filtering of categories. The user enters a query and presses enter; the matching rooms will be shown.
+\item The main chat view with messages shown from different users.
+\item Lists the connected users in the chat room.
+\item The URL localhost:8000/room/zy7 shows a private room.
+\item A list of the most recent rooms which have been visited by the user are shown.
 \end{enumerate}
+
+\subsection{Remarks on the User Interface}
+It was remarked in the earlier stages of the project that the user interface shown in the wireframe above was too complicated and over ambitious. We set out to simplify the user interface and feel that it has been simplified to an extent which makes it usable. At the left hand side, it gives clear instructions of how to create rooms and the names of the tabs in the central part of the interface is sensible. The main functionality of chat can be, for example, easily accessed by clicking the chat tab.\\
+
+HTML, CSS and JavaScript has been used to put together the user interface and to implement some functionality such as the filtering of categories. These technologies are widely used and are supported by all main browsers. The design is responsive to a degree, but is not as fully responsive as we would like. Using a responsive CSS toolkit such as Twitter's Bootstrap would solve this issue and it is something which is definitely to be implemented in the future. 
+
+To update the data on the client side, AJAX is used. The messages are dynamically updated on the browser as they appear in the chat window. 
 
 %include screenshots of the real thing and compare and contrast. Basically the real thing is quite close to the wireframe but some things have been simplified for example we can only go down on level in the categories and not two. Also categories and most recent/popular has been introduced.
 
-\begin{itemize}
+%\begin{itemize}
 %\item	Draw a wireframe of the user interface %include the png of the main screen from moqups
 %\item	this may require several wireframes depending on the complexity of the application and the interfaces %include 3 screenshots from the main thing
 %\item	Describe the user interface. 
 %\item	i.e. Label key input and output components: describe them.
-\item	Provide a Walkthrough and explain the user interactions with application. %walkthrough of starting a public chat for a particular topic, finding a particular topic and starting a chat
-\item	i.e. use cases
-\item	Describe the interactions associated with the dynamic components on the user interface. %the chat messages are dynamically updated.
-\item	What calls are required to dynamically update the data on the client side?
-\item	How does the user interface help the user achieve their goal, or complete their task? 
-\item	Is the user interface intuitive, appealing, usable, etc?
-\item	What technologies are used on the client side? %HTML CSS JS
-\item	What are the reasons for your choices? i.e. what is the advantages and disadvantages of using this technology? %popular web technologies supported by all main browsers
-\item	What other options are there? %HTML5 %Responsive CSS framework such as Bootstrap, Zurb, Foundations
-\end{itemize}
+%\item	Provide a Walkthrough and explain the user interactions with application. %walkthrough of starting a public chat for a particular topic, finding a particular topic and starting a chat
+%\item	i.e. use cases
+%\item	Describe the interactions associated with the dynamic components on the user interface. %the chat messages are dynamically updated.
+%\item	What calls are required to dynamically update the data on the client side?
+%\item	How does the user interface help the user achieve their goal, or complete their task? 
+%\item	Is the user interface intuitive, appealing, usable, etc?
+%\item	What technologies are used on the client side? %HTML CSS JS
+%\item	What are the reasons for your choices? i.e. what is the advantages and disadvantages of using this technology? %popular web technologies supported by all main browsers
+%\item	What other options are there? %HTML5 %Responsive CSS framework such as Bootstrap, Zurb, Foundations
+%\end{itemize}
 
 \section{Application Architecture}
 The application is designed to use a 3-tier architecture as illustrated in the diagram below. Using this type of architecture allows
@@ -175,19 +187,31 @@ The middleware is where the Django web framework is positioned. It essentially g
 \textbf{Database} \\
 The database stores information about the models which can be requested by the middleware by an Object Relational Model request. The database is implemented using SQLite3.\\ \\
 
+\section{ER Diagram}
+\includegraphics[scale=0.2]{er.png}
+
 \begin{itemize}
-\item	N-Tier Architecture Diagram %nearly done
-\item	i.e. data flow diagram between the interface/client, middle ware, and backend services/data repos %nearly done
-\item	Describe the data model i.e. what data needs to be stored or persisted by the application? %todo
-\item	What are the relationships within the data model. %todo
-\item	i.e. use ER diagram and explain. %todo
-\item	Describe the backend services used (if any). %sqlite3 db to store...
-\item	Reflective Questions: 
-\item	How have you ensured that there is a separation of concerns? %used the mvc pattern equivalent of django: model view template MTV 
-\item	What other technology could have been used instead of django? %php web frameworks: cakewalk, symphony. others: ruby on rails, spring 
-\item	What are the advantages of using a Web Application Framework over other technology? %more structure perhaps over php for example; encourages a separation of concerns 
-\item	And, what are the disadvantages? %development time could be longer if one is to maintain a clear structure. some web apps can be put together in a short space of time but violate the fundamental separation of concerns that is promoted by the Django web application framework
+\item The data model requires details for three main entities, Users, Messages and rooms. For a user a username and password is required, Room a name. Messages have a room, a user,  a timestamp and their content.
+Since previous messages are not shown to the user we only need store these for a few seconds to allow for ajax calls to retrieve them, but currently they are kept indefinitely.
+%todo
+\item A large relation is required to keep track of a users history with a specific room.This allows the “recent rooms” tab to be calculated. A count of visits is also kept, currently for usage analysis, but this will hopefully be future developed to a “favourites” tab.
+Each message has a Room and a User associated with it. Each room has a list of subscribers. Again currently this is not used but in future would allow access restriction for private rooms to a specific group of users.
+\item The diagram below shows the data model specified above. Password and subscribers are shown in red since they are not currently used but will be required for future work.
+The relations are also specified. One user can have several messages, but you cannot have a message associated with several users. THis is the same for rooms.This is the same for the UserRooms relationship. One user can have up to N where N is the number of rooms. One Room can have up to N where N is the number of users.
+There is a many to many relationship between users and rooms. Multiple users can be subscribed with multiple rooms and vice-versa.
 \end{itemize}
+%\begin{itemize}
+%\item	N-Tier Architecture Diagram %nearly done
+%\item	i.e. data flow diagram between the interface/client, middle ware, and backend services/data repos %nearly done
+%\item	Describe the data model i.e. what data needs to be stored or persisted by the application? %todo
+%\item	What are the relationships within the data model. %todo i.e. use ER diagram and explain. %todo
+%\item	Describe the backend services used (if any). %sqlite3 db to store...
+%\item	Reflective Questions: 
+%\item	How have you ensured that there is a separation of concerns? %used the mvc pattern equivalent of django: model view template MTV 
+%\item	What other technology could have been used instead of django? %php web frameworks: cakewalk, symphony. others: ruby on rails, spring 
+%\item	What are the advantages of using a Web Application Framework over other technology? %more structure perhaps over php for example; encourages a separation of concerns 
+%\item	And, what are the disadvantages? %development time could be longer if one is to maintain a clear structure. some web apps can be put together in a short space of time but violate the fundamental separation of concerns that is promoted by the Django web application framework
+%\end{itemize}
 
 \subsection{Reflections on Application Architecture}
 Separation of concerns is extremely important to ensure a consistent structure of the application and to ensure maintainability. It also allows development to happen in parallel, e.g. someone could be working on the HTML and CSS of a page, and someone could be working on the database backend. The separation of concerns in this application has been achieved by using the Model, View, Template pattern in Django. \\
@@ -207,55 +231,124 @@ Other web technologies/frameworks could have been used instead of Django with so
 \subsection{Sending a chat message}
 \includegraphics[scale=0.4]{postmessage.png}
 
+On sending a chat message, a HTTP POST request is made to the Django web server. The message is then stored in the database and reponse requests are made.
+
 
 \subsection{Displaying chat messages}
 \includegraphics[scale=0.4]{getmessage.png}
 
+On getting chat message, a HTTP GET request is made to the Django web server which in turn fetches the messages to be displayed to the user. Messages are polled for frequently to achieve an instantaneous feel to the application.
 
-\begin{itemize}
 
-\item	On the architecture diagram, Identify and label the main messages that will be parsed through the application.
-\item	or alternatively (and preferably) include sequence diagrams to denote the sequence of communications parse between clients and servers.
-\item	Describe the messages that are parsed back and forth through the application.
-\item	For the main transactions - describe the payload of the messages 
-\item	i.e. What are the contents of the messages? i.e. include sample XML, XHTML, JSON, etc of one or two messages.
-\item	What is the format of the messages? 
-\item	Why this format? 
-\item	What other formats could be used, what are the advantages and disadvantages of these other formats?
-\end{itemize}
+%\begin{itemize}
+
+%\item	On the architecture diagram, Identify and label the main messages that will be parsed through the application.
+%\item	or alternatively (and preferably) include sequence diagrams to denote the sequence of communications parse between clients and servers.
+%\item	Describe the messages that are parsed back and forth through the application.
+%\item	For the main transactions - describe the payload of the messages 
+%\item	i.e. What are the contents of the messages? i.e. include sample XML, XHTML, JSON, etc of one or two messages.
+%\item	What is the format of the messages? 
+%\item	Why this format? 
+%\item	What other formats could be used, what are the advantages and disadvantages of these other formats?
+%\end{itemize}
 
 
 \section{Implementation Notes}
 \label{sec: implementation}
-
+\subsection{Views}
 \begin{itemize}
-\item Views - What are the main views that you have implemented and what do they do?
-\item URL Mapping Schema - what is your URL mapping and schema?
-\item External Services  - what external services does your application include and what handlers did you include?
-\item	Functionality Checklist (which functionality is completed)
-\item	Known Issues (what kind of works, what kind of errors to do you get)
-\item What technologies have been used and are required for the application. Include a list or table of all the technologies, standards, and protocols that will be required.
+\item Index -- This is the home page and displays the tabs required for interaction with the application as well as the login/logout forms.
+\item Upgrade/My Account/Register -- These views provide basic functionality for the users to upgrade, view their account details and register using a form.
+\item Categories -- This view is included in the index view and allows the user to view categories and filter categories of chat rooms based on personal preference.
+\item Recent -- This shows the most recent chat rooms that the user has visited and allows them to revisit these rooms.
+\item Room -- This is the main view for the chat functionality. It allows users to send messages to each other and dynamically updates the messages in the chat room as they are entered by the users.
 \end{itemize}
+
+\subsection{URL Mapping Schema and External Services}
+We set out to create URLs that were friendly and intuitive. As such, for the chat rooms, we have created the URLs in the form /room/something, where something is the name of a chat room. All other pages which don't start /room link to a specific page, for example, /register links to the registration page.
+
+We have used Amazon EC2 to deploy our web application in the cloud. While this external service is not used for the core functionality of the application, it gave us experience in deploying a web application which will no doubt be useful in the future.
+
+\subsection{Functionality Checklist}
+The following functionality is implemented:
+\begin{itemize}
+\item Anonymous/guest chatting
+\item Register/login/login using Google
+\item Featured rooms
+\item Featured rooms filtering
+\item Private chat room creation
+\item Public chat room creation
+\item Auto-room creation through link (create private chat/public chat)
+\item Recently used rooms
+\item 1-to-1 chat/multi-user chat
+\item Advertisements
+\end{itemize}
+
+\subsection{Known Issues}
+\begin{itemize}
+\item The file sharing functionality is not fully implemented. A mock system of uploading and sending a file inside a chat when you click the `share' button is currently implemented.
+\item Creating/switching to a room refreshes the page and creates the chat but does not switch to the chat tab; the user has to manually click the chat tab to start chatting in that room.
+\item The ability for a user to enter multiple chats is currently not available; they can only chat in 1 room at a time.
+\item The error message system e.g. 404 Not Found displayed on non-existent page is not currently active.
+\end{itemize}
+
+\subsection{Technologies Used}
+\begin{itemize}
+\item XHTML/CSS
+\item Javascript with jQuery
+\item AJAX
+\item Django/Python
+\item SQLite3
+
+\end{itemize}
+
+%\begin{itemize}
+%\item Views - What are the main views that you have implemented and what do they do?
+%\item URL Mapping Schema - what is your URL mapping and schema?
+%\item External Services  - what external services does your application include and what handlers did you include?
+%\item	Functionality Checklist (which functionality is completed)
+%\item	Known Issues (what kind of works, what kind of errors to do you get)
+%\item What technologies have been used and are required for the application. Include a list or table of all the technologies, standards, and protocols that will be required.
+%\end{itemize}
 
 \section{Reflective Summary}
-{\bf For the Implementation Report Only:}
-\begin{itemize}
-\item	What have you learnt through the process of development? 
-\item	How did the application of frameworks help or hinder your progress? 
-\item	What problems did you encounter? 
-\item	What were your major achievements?
-\end{itemize}
+The use of the Django framework at first slowed down the development process since there was quite a steep learning curve. As we got more comfortable with Django though, we felt the use of the Model-Template-View (MTV) that is central to Django, decreased the development time by quite a large amount. It meant that parts of the application could be developed in parallel which would perhaps not otherwise have been possible without the user of a web development framework.
+
+2 of the 3 members of the team had no previous experience with Python which added some challenges, naturally, to the development of the application.
+
+Furthermore, a range of technologies had to be used, some of which we were not too familiar with. This brought its own challenges and as a result of this project, we feel we have obtained a greater and more broader knowledge of these technologies.
+
+We would say that our major achievement is going from the specification and design of an application to a product, which while not complete, includes most of the core functionality that we set out to implement. Another achievement is also the learning of the Django framework (and other technologies) in a short space of time which allowed us to implement the application. If we were to implement another web application, the process would be easier as we obtained some valuable experience in this project.
+%{\bf For the Implementation Report Only:}
+%\begin{itemize}
+%\item	What have you learnt through the process of development? 
+%\item	How did the application of frameworks help or hinder your progress? 
+%\item	What problems did you encounter? 
+%\item	What were your major achievements?
+%\end{itemize}
 
 \section{Summary and Future Work}
-\begin{itemize}
-\item	Summary of application and its current state.
-\item	Include a list or table of all the technologies, standards, and protocols that will be required.
-\item	What are the limitations?
-\item Plans for future development
-\end{itemize}
+To summarise, Berserker Chat is a web-based instant messenger which allows many users to interact with each other to chat. It includes functionality to find other users by interests, by the categories section and also to create both private and public rooms which have not existed before.
+In terms of future development, the file sharing could be fully implemented to allow users to upload files and for other users to download them. Furthermore, the user interface could be further enhanced to be fully responsive using a CSS toolkit. 
+%\begin{itemize}
+%\item	Summary of application and its current state.
+%\item	Include a list or table of all the technologies, standards, and protocols that will be required.
+%\item	What are the limitations?
+%\item Plans for future development
+%\end{itemize}
+
+\section{Contributions}
+Equal contributions.
+\textbf{Dan Tomosoiu} -- design, templates, views 
+\textbf{Tony Lau} -- specification, templates, report 
+\textbf{Hector Grebbell} -- views, models
 
 \section{Acknowledgements}
 Thank you to Dr. Leif Azzopardi for his insightful suggestions and motivating comments. Thank you also to the demonstrators for their suggestions on the application.
+
+\begin{thebibliography}{9}
+\bibitem{django} \emph{https://www.djangoproject.com/}
+\end{thebibliography}
 
 \bibliographystyle{abbrv}
 \bibliography{sig-proc}
