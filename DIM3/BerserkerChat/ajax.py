@@ -42,6 +42,6 @@ def getRoom(request, name, room):
 
 @dajaxice_register
 def createGuestName(request, name):
-    #request.session['guest_name'] = name
+    request.session['guest_name'] = name
     print name
     return name
