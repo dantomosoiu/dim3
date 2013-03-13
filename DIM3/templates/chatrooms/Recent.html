@@ -7,9 +7,9 @@
 
     <div id="recent-rooms-holder">
 
-    <p>here be a list of recent rooms used by the user</p>
+    <p>Recent Rooms</p>
         {% for room in rooms %}
-            <a href="room/{{ room.room.slug }}"> {{ room.room.name }} </a><br/>
+            <a href="room/{{ room }}"> {{ room }} </a><br/>
 
         {% endfor %}
 
