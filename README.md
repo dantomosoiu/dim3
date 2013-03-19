@@ -1,7 +1,11 @@
 BeserkerChat
+http://www.berserkerchat.co.nr
+http://54.244.251.42/
+
 Created By:	Dan Tomosoiu
 		Hector Grebbell
 		Tony Lau
+
 ====
 Dependencies-
 	-Django 1.5 (and all sub dependencies)
@@ -14,6 +18,6 @@ Dependencies-
 Git Repository 
 https://github.com/hectorgrebbell/dim3 (Any trouble accessing contact hectorgrebbell@googlemail.com)
 
-There Should be a fixtures directory which will populate the databases. If something goes wrong delete BerserkerChat/berserkerchat.db then run syncdb
+There should be a fixtures directory which will populate the databases. If something goes wrong delete BerserkerChat/berserkerchat.db then run syncdb
 
 
