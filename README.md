@@ -1,6 +1,6 @@
 BeserkerChat
 http://www.berserkerchat.co.nr
-http://54.244.251.42/
+(http://54.244.251.42/)
 
 Created By:	Dan Tomosoiu
 		Hector Grebbell
