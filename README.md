@@ -16,7 +16,7 @@ Dependencies-
 
 
 Git Repository 
-https://github.com/hectorgrebbell/dim3 (Any trouble accessing contact hectorgrebbell@googlemail.com)
+https://github.com/hectorgrebbell/dim3 
 
 There should be a fixtures directory which will populate the databases. If something goes wrong delete BerserkerChat/berserkerchat.db then run syncdb
 
